@@ -24,5 +24,15 @@ namespace PHPReSP
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            GenerateReport();
+        }
+
+        private void GenerateReport()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

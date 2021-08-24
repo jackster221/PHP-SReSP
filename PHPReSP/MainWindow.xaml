@@ -12,7 +12,7 @@
             <ColumnDefinition Width="133*"/>
         </Grid.ColumnDefinitions>
         <DataGrid Margin="138,39,10,81" Grid.Column="1"/>
-        <Button Content="Generate Report" HorizontalAlignment="Left" Margin="549,372,0,0" VerticalAlignment="Top" Height="34" Width="106" Grid.Column="1"/>
+        <Button Content="Generate Report" HorizontalAlignment="Left" Margin="549,372,0,0" VerticalAlignment="Top" Height="34" Width="106" Grid.Column="1" Click="Button_Click"/>
         <Label Content="Sales Reporting" Grid.Column="1" HorizontalAlignment="Left" Margin="208,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.017,-0.055"/>
 
     </Grid>
