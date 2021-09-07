@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,24 +16,38 @@ using System.Windows.Shapes;
 
 namespace PHPReSP
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
+
+        private DataManager Manager = new DataManager();
+        
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            GenerateReport();
+
         }
 
-        private void GenerateReport()
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            var filedlog = new OpenFileDialog();
+            filedlog.Title = "Open CSV File";
+            filedlog.Filter = "CSV Files (*.csv)|*.csv";
+
+            filedlog.Multiselect = false;
+            if (filedlog.ShowDialog() == true)
+            {
+                string filename = "";
+                filename = filedlog.FileName;
+                ListViewSales.ItemsSource = Manager.ReadCSV(filename);
+            }
+
+            
         }
     }
 }

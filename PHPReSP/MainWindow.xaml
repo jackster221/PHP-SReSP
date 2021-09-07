@@ -5,15 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PHPReSP"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="27*"/>
-            <ColumnDefinition Width="133*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DataGrid Margin="138,39,10,81" Grid.Column="1"/>
-        <Button Content="Generate Report" HorizontalAlignment="Left" Margin="549,372,0,0" VerticalAlignment="Top" Height="34" Width="106" Grid.Column="1" Click="Button_Click"/>
-        <Label Content="Sales Reporting" Grid.Column="1" HorizontalAlignment="Left" Margin="208,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.017,-0.055"/>
+        <Grid.RowDefinitions>
+
+        </Grid.RowDefinitions>
+
+
+        <Button Content="Import CSV" HorizontalAlignment="Left" Margin="715,386,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="Button_Click"/>
+        <ListView x:Name="ListViewSales" Margin="238,10,10,71">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Sale ID" Width="100" DisplayMemberBinding="{Binding Path=SaleID}"/>
+                    <GridViewColumn Header="Product" Width="150" DisplayMemberBinding="{Binding Path=Product}"/>
+                    <GridViewColumn Header="Cost" Width="40" DisplayMemberBinding="{Binding Path=Cost}"/>
+                    <GridViewColumn Header="Number of Items" Width="200" DisplayMemberBinding="{Binding Path=ItemsInsale}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>
