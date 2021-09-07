@@ -12,6 +12,7 @@ namespace PHPReSP
 
         public int SaleID { get; set; }
         public string Product { get; set; }
+        //public string PurchaseDate { get; set; }
         public double Cost { get; set; }
         public int ItemsInSale { get; set; }
 

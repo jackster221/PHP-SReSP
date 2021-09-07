@@ -20,9 +20,10 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Sale ID" Width="100" DisplayMemberBinding="{Binding Path=SaleID}"/>
-                    <GridViewColumn Header="Product" Width="150" DisplayMemberBinding="{Binding Path=Product}"/>
+                    <GridViewColumn Header="Product" Width="120" DisplayMemberBinding="{Binding Path=Product}"/>
+                    <GridViewColumn Header="Purchase Date" Width="100" DisplayMemberBinding="{Binding Path=PurchaseDate}"/>
                     <GridViewColumn Header="Cost" Width="40" DisplayMemberBinding="{Binding Path=Cost}"/>
-                    <GridViewColumn Header="Number of Items" Width="200" DisplayMemberBinding="{Binding Path=ItemsInsale}"/>
+                    <GridViewColumn Header="Number of Items" Width="100" DisplayMemberBinding="{Binding Path=ItemsInSale}"/>
                 </GridView>
             </ListView.View>
         </ListView>
