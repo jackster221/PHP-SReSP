@@ -45,6 +45,8 @@ namespace PHPReSP
             {
                 string filename = "";
                 filename = filedlog.FileName;
+
+                ListViewSales.ItemsSource = null;
                 ListViewSales.ItemsSource = Manager.ReadCSV(filename);
             }
 

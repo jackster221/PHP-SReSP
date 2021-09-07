@@ -27,15 +27,20 @@ namespace PHPReSP
 
             string[] lines = File.ReadAllLines(System.IO.Path.ChangeExtension(fileName, ".csv"));
 
-            return lines.Select(line =>
+            foreach(string line in lines)
             {
                 string[] data = line.Split(',');
 
-                SalesRecord curRecord = new SalesRecord(Convert.ToInt32(data[0]), data[1], Convert.ToDouble(data[2]), Convert.ToInt32(data[3]));
-                this._records.Add(curRecord);
+                string[] dateData = data[2].Split("/");
 
-                return curRecord;
-            });
+                DateTime purchaseDate = new DateTime(Convert.ToInt32(dateData[0]), Convert.ToInt32(dateData[1]), Convert.ToInt32(dateData[2]));
+
+                SalesRecord curRecord = new SalesRecord(Convert.ToInt32(data[0]), data[1], purchaseDate, Convert.ToDouble(data[3]), Convert.ToInt32(data[4]));
+                
+                this._records.Add(curRecord);
+            }
+
+            return _records;
         }
 
 
