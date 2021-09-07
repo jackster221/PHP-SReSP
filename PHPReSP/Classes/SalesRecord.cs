@@ -12,7 +12,7 @@ namespace PHPReSP
         private System.Guid GUID { get; } //guid to uniquely identify each sale (may replace SaleID)
         public int SaleID { get; set; }
         public string Product { get; set; }
-        public DateTime PurchaseDate { get; set; }
+        public string PurchaseDate { get; set; }
         public double Cost { get; set; }
         public int ItemsInSale { get; set; }
 
@@ -21,7 +21,7 @@ namespace PHPReSP
         {
             this.SaleID = ID;
             this.Product = product;
-            this.PurchaseDate = date.Date;
+            this.PurchaseDate = date.ToString("d");
             this.Cost = cost;
             this.ItemsInSale = numberSold;
             this.GUID = System.Guid.NewGuid();
