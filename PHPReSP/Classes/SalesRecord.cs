@@ -9,7 +9,7 @@ namespace PHPReSP
 
     class SalesRecord
     {
-
+        private System.Guid GUID { get; } //guid to uniquely identify each sale (may replace SaleID)
         public int SaleID { get; set; }
         public string Product { get; set; }
         //public string PurchaseDate { get; set; }
@@ -23,6 +23,7 @@ namespace PHPReSP
             this.Product = product;
             this.Cost = cost;
             this.ItemsInSale = numberSold;
+            this.GUID = System.Guid.NewGuid();
         }
 
     }

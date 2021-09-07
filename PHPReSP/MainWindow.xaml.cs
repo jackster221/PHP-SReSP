@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,6 +49,14 @@ namespace PHPReSP
             }
 
             
+        }
+
+
+
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Manager.SaveToCSV(Manager._records);
         }
     }
 }
