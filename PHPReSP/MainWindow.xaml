@@ -20,14 +20,14 @@
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Sale ID" Width="100" DisplayMemberBinding="{Binding Path=SaleID}"/>
-                    <GridViewColumn Header="Product" Width="120" DisplayMemberBinding="{Binding Path=Product}"/>
-                    <GridViewColumn Header="Purchase Date" Width="150" DisplayMemberBinding="{Binding Path=PurchaseDate}"/>
-                    <GridViewColumn Header="Cost($)" Width="50" DisplayMemberBinding="{Binding Path=Cost}"/>
-                    <GridViewColumn Header="Number of Items" Width="100" DisplayMemberBinding="{Binding Path=ItemsInSale}"/>
+                    <GridViewColumn Header="Product ID" Width="120" DisplayMemberBinding="{Binding Path=ProductID}"/>
+                    <GridViewColumn Header="Sale Date" Width="150" DisplayMemberBinding="{Binding Path=SaleDate}"/>
+                    <GridViewColumn Header="Number Sold" Width="100" DisplayMemberBinding="{Binding Path=NumberSold}"/>
                 </GridView>
             </ListView.View>
         </ListView>
         <Button Content="Export As CSV" HorizontalAlignment="Left" Margin="706,389,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Button Content="Add New Sale" HorizontalAlignment="Left" Margin="58,117,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="Open_New_Sale" Width="100"/>
 
     </Grid>
 </Window>

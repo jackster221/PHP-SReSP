@@ -60,5 +60,12 @@ namespace PHPReSP
         {
             Manager.SaveToCSV(Manager._records);
         }
+
+        // Open the dialog to enter a new sale
+        private void Open_New_Sale(object sender, RoutedEventArgs e)
+        {
+            AddSaleRecordPage page = new AddSaleRecordPage();
+            page.ShowDialog();
+        }
     }
 }

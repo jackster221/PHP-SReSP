@@ -11,19 +11,18 @@ namespace PHPReSP
     {
         private System.Guid GUID { get; } //guid to uniquely identify each sale (may replace SaleID)
         public int SaleID { get; set; }
-        public string Product { get; set; }
-        public string PurchaseDate { get; set; }
-        public double Cost { get; set; }
-        public int ItemsInSale { get; set; }
+        public string ProductID { get; set; }
+        public int NumberSold { get; set; }
+        public string SaleDate { get; set; }
+        
 
 
-        public SalesRecord(int ID, string product, DateTime date, double cost, int numberSold)
+        public SalesRecord(int ID, string productID, DateTime SaleDate, int NumberSold)
         {
             this.SaleID = ID;
-            this.Product = product;
-            this.PurchaseDate = date.ToString("d");
-            this.Cost = cost;
-            this.ItemsInSale = numberSold;
+            this.ProductID = productID;
+            this.SaleDate = SaleDate.ToString("d");
+            this.NumberSold = NumberSold;
             this.GUID = System.Guid.NewGuid();
         }
 

@@ -35,7 +35,7 @@ namespace PHPReSP
 
                 DateTime purchaseDate = new DateTime(Convert.ToInt32(dateData[0]), Convert.ToInt32(dateData[1]), Convert.ToInt32(dateData[2]));
 
-                SalesRecord curRecord = new SalesRecord(Convert.ToInt32(data[0]), data[1], purchaseDate, Convert.ToDouble(data[3]), Convert.ToInt32(data[4]));
+                SalesRecord curRecord = new SalesRecord(Convert.ToInt32(data[0]), data[1], purchaseDate, Convert.ToInt32(data[4]));
                 
                 this._records.Add(curRecord);
             }
