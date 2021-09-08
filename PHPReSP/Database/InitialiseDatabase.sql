@@ -5,6 +5,8 @@ create table Products (
 	ProductID int auto_increment primary key,
     ProductName varchar(255),
     Category varchar(255),
+	Cost double,
+    Price double,
     CurrentInventory int
 );
 
@@ -15,12 +17,12 @@ create table Sales (
     SaleDate date
 );
 
-insert into Products (ProductName, Category, CurrentInventory) 
-			  values ("Toothpaste", "Dental Care", 100),
-					 ("Multivitamin", "Vitamins", 100),
-					 ("Panadol", "Medicines", 100),
-					 ("Cleanser", "Beauty", 100),
-					 ("David Beckham", "Fragrances", 100);
+insert into Products (ProductName, Category, Cost, Price, CurrentInventory) 
+			  values ("Toothpaste", "Dental Care", 1.49, 3.25, 100),
+					 ("Multivitamin", "Vitamins", 9.99, 15.99, 100),
+					 ("Panadol", "Medicines", 4.49, 8.99, 100),
+					 ("Cleanser", "Beauty", 8.99, 12.49, 100),
+					 ("David Beckham", "Fragrances", 39.99, 49.99, 100);
 
 insert into Sales (ProductID, NumberSold, SaleDate)
 		values (1, 2, "2021-08-01"),
