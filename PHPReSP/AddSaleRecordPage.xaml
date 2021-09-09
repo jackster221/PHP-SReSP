@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PHPReSP"
         mc:Ignorable="d"
-        Title="Add Sales Record" Height="164" Width="232">
+        Title="Add Sales Record" Height="200" Width="250">
     <Grid Margin="0,0,0,0">
         <TextBlock HorizontalAlignment="Left" Margin="97,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-au" Text="Add Sale"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="15,46,0,0" Text="Product ID" TextWrapping="Wrap" VerticalAlignment="Top"/>

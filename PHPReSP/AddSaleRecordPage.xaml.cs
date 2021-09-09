@@ -32,19 +32,22 @@ namespace PHPReSP
         // When the button is pressed add new sales record
         private void AddNewRecord(object sender, RoutedEventArgs e)
         {
-            MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=password;");
+            MySqlConnection connection = new MySqlConnection(
+                "server=localhost;uid=root;pwd=password;database=phpsreps_db");
 
             try
             {
                 connection.Open();
                 MySqlCommand cmd = new MySqlCommand("Insert Into Sales (ProductID,NumberSold,SaleDate) values " +
-                    ProductIDBox.Text + "," + NumberSoldBox.Text + "," + SaleDateBox.SelectedDate, connection);
-                MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+                    "(" + ProductIDBox.Text + "," + NumberSoldBox.Text + 
+                    ", \"" + Convert.ToDateTime(SaleDateBox.Text).ToString("yyyy-MM-dd") + "\");", connection);
+                cmd.ExecuteNonQuery();
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+
             connection.Close();
 
             Hide();
