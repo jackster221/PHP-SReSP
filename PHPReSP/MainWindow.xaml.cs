@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -26,10 +27,12 @@ namespace PHPReSP
         public MainWindow()
         {
             InitializeComponent();
+                  LoadGrid();
         }
 
+            MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=password;database=phpsreps_db");
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+            private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
         }
@@ -46,8 +49,8 @@ namespace PHPReSP
                 string filename = "";
                 filename = filedlog.FileName;
 
-                ListViewSales.ItemsSource = null;
-                ListViewSales.ItemsSource = Manager.ReadCSV(filename);
+                //ListViewSales.ItemsSource = null;
+                //ListViewSales.ItemsSource = Manager.ReadCSV(filename);
             }
 
             
@@ -67,5 +70,65 @@ namespace PHPReSP
             AddSaleRecordPage page = new AddSaleRecordPage();
             page.ShowDialog();
         }
-    }
+
+            private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+            {
+
+            }
+
+            public void LoadGrid()
+            {
+                  MySqlCommand cmd = new MySqlCommand("select * from Sales", con);
+                  DataTable dt = new DataTable();
+                  con.Open();
+                  MySqlDataReader sdr = cmd.ExecuteReader();
+                  dt.Load(sdr);
+                  con.Close();
+                  datagrid.ItemsSource = dt.DefaultView;
+            }
+
+            private void DeleteRecord(object sender, RoutedEventArgs e)
+            {
+                  MySqlCommand cmd = new MySqlCommand("delete from Sales where ProductID = " + searchbyID.Text + " ", con);
+                  con.Open();
+                  try
+                  {
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Record Deleted");
+                        con.Close();
+                        LoadGrid();
+                        con.Close();
+                  }
+                  catch (MySqlException ex)
+                  {
+                        MessageBox.Show(ex.Message);
+                  }
+                  finally
+                  {
+                        con.Close();
+                  }
+            }
+
+            private void Edit_Sales_Record(object sender, RoutedEventArgs e)
+            {
+                  con.Open();
+                  MySqlCommand cmd = new MySqlCommand("update Sales set ProductID = '"+productID.Text+ "', NumberSold = '"+numberSold.Text+ "', SaleDate = '"+Convert.ToDateTime(SaleDateBox.Text).ToString("yyyy-MM-dd")+ "' where ProductID = "+searchbyID.Text+" ", con);
+                  try
+                  {
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Record Updated");
+                        con.Close();
+                        LoadGrid();
+                        con.Close();
+                  }
+                  catch (MySqlException ex)
+                  {
+                        MessageBox.Show(ex.Message);
+                  }
+                  finally
+                  {
+                        con.Close();
+                  }
+            }
+      }
 }
