@@ -76,6 +76,11 @@ namespace PHPReSP
 
             }
 
+            private void RefreshGrid(object sender, RoutedEventArgs e)
+            {
+                  LoadGrid();
+            }
+
             public void LoadGrid()
             {
                   MySqlCommand cmd = new MySqlCommand("select * from Sales", con);

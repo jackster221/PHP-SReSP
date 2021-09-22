@@ -25,6 +25,7 @@
         <TextBox x:Name="productID" HorizontalAlignment="Left" Margin="48,124,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="numberSold" HorizontalAlignment="Left" Margin="48,150,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <DatePicker x:Name="SaleDateBox" HorizontalAlignment="Left" Margin="50,183,0,0" VerticalAlignment="Top" Height="23" Width="118"/>
+        <Button x:Name="Refresh" Content="Refresh" HorizontalAlignment="Left" Margin="58,70,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="RefreshGrid" Width="100" Height="21"/>
 
     </Grid>
 </Window>

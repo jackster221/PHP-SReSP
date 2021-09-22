@@ -29,6 +29,7 @@ namespace PHPReSP
 
         }
 
+
         // When the button is pressed add new sales record
         private void AddNewRecord(object sender, RoutedEventArgs e)
         {
@@ -37,20 +38,20 @@ namespace PHPReSP
 
             try
             {
-                connection.Open();
+                
                 MySqlCommand cmd = new MySqlCommand("Insert Into Sales (ProductID,NumberSold,SaleDate) values " +
                     "(" + ProductIDBox.Text + "," + NumberSoldBox.Text + 
                     ", \"" + Convert.ToDateTime(SaleDateBox.Text).ToString("yyyy-MM-dd") + "\");", connection);
-                cmd.ExecuteNonQuery();
-            }
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+
+                  }
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-
-            connection.Close();
-
-            Hide();
+                  Hide();
 
         }
     }
