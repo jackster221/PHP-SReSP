@@ -15,7 +15,7 @@
         </Grid.RowDefinitions>
 
 
-        <Button Content="Add CSV Data" HorizontalAlignment="Left" Margin="238,389,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="Button_Click"/>
+        <Button Content="Add CSV Data" HorizontalAlignment="Left" Margin="238,389,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="AddCSVData"/>
         <ListView x:Name="ListViewSales" Margin="238,10,10,71">
             <ListView.View>
                 <GridView>
@@ -26,8 +26,9 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Export As CSV" HorizontalAlignment="Left" Margin="706,389,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
-        <Button Content="Add New Sale" HorizontalAlignment="Left" Margin="58,117,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="Open_New_Sale" Width="100"/>
+        <Button Content="Export As CSV" HorizontalAlignment="Left" Margin="706,389,0,0" VerticalAlignment="Top" Click="ExportCSV"/>
+        <Button Content="Add New Sale" HorizontalAlignment="Left" Margin="58,117,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="AddNewSale" Width="100"/>
+        <Button Content="Products" HorizontalAlignment="Left" Margin="58,73,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="OpenProductsTab" Width="100"/>
 
     </Grid>
 </Window>

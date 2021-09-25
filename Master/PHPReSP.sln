@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PHPReSP", "PHPReSP\PHPReSP.csproj", "{E4764DB7-28C3-4495-9767-D410E0880714}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4764DB7-28C3-4495-9767-D410E0880714}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4764DB7-28C3-4495-9767-D410E0880714}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4764DB7-28C3-4495-9767-D410E0880714}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4764DB7-28C3-4495-9767-D410E0880714}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA4D9273-B370-404F-9F7A-CA6DD3BE6B27}
+	EndGlobalSection
+EndGlobal

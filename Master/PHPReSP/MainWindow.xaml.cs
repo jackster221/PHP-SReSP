@@ -34,7 +34,7 @@ namespace PHPReSP
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void AddCSVData(object sender, RoutedEventArgs e)
         {
             var filedlog = new OpenFileDialog();
             filedlog.Title = "Open CSV File";
@@ -49,23 +49,25 @@ namespace PHPReSP
                 ListViewSales.ItemsSource = null;
                 ListViewSales.ItemsSource = Manager.ReadCSV(filename);
             }
-
-            
         }
 
-
-
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void ExportCSV(object sender, RoutedEventArgs e)
         {
             Manager.SaveToCSV(Manager._records);
         }
 
         // Open the dialog to enter a new sale
-        private void Open_New_Sale(object sender, RoutedEventArgs e)
+        private void AddNewSale(object sender, RoutedEventArgs e)
         {
             AddSaleRecordPage page = new AddSaleRecordPage();
             page.ShowDialog();
         }
+
+        private void OpenProductsTab(object sender, RoutedEventArgs e)
+        {
+            DisplayProducts page = new DisplayProducts();
+            page.ShowDialog();
+        }
     }
 }
+
