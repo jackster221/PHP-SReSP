@@ -19,7 +19,7 @@
         <Button Content="Export As CSV" HorizontalAlignment="Left" Margin="706,389,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
         <Button Content="Add New Sale" HorizontalAlignment="Left" Margin="58,45,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="Open_New_Sale" Width="100"/>
         <Button Content="Edit Record" HorizontalAlignment="Left" Margin="58,275,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="Edit_Sales_Record" Width="100"/>
-        <DataGrid x:Name="datagrid" Margin="217,28,46,126" SelectionChanged="DataGrid_SelectionChanged"/>
+        <DataGrid x:Name="datagrid_salesdata" Margin="217,28,46,126" />
         <Button Content="Delete Record" HorizontalAlignment="Left" Margin="336,335,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="DeleteRecord" Width="100"/>
         <TextBox x:Name="searchbyID" HorizontalAlignment="Left" Margin="186,335,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="productID" HorizontalAlignment="Left" Margin="48,124,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
