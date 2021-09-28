@@ -40,9 +40,11 @@ namespace PHPReSP
 
 
 
+
                 this._records.Add(curRecord);
                 AddNewRecord(curRecord);
             }
+
         }
 
 
@@ -79,5 +81,6 @@ namespace PHPReSP
             connection.Close();
 
         }
+
     }
 }

@@ -46,7 +46,6 @@ namespace PHPReSP
                 cmd.ExecuteNonQuery();
                 connection.Close();
 
-
             }
             catch (MySqlException ex)
             {
