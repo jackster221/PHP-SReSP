@@ -45,9 +45,11 @@ namespace PHPReSP
                 string filename = "";
                 filename = filedlog.FileName;
 
-                //ListViewSales.ItemsSource = null;
-                //ListViewSales.ItemsSource = Manager.ReadCSV(filename);
+                Manager.ReadCSV(filename);
             }
+
+            myRefresh.RefreshDataGrid(Maindatagrid, "Sales");
+
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

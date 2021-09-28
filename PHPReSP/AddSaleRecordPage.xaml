@@ -12,8 +12,8 @@
         <TextBlock HorizontalAlignment="Left" Margin="15,67,0,0" Text="Number Sold" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="15,88,0,0" Text="Sale Date" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBox x:Name="ProductIDBox" HorizontalAlignment="Left" Margin="90,44,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="108"/>
-        <DatePicker x:Name="SaleDateBox" HorizontalAlignment="Left" Margin="90,90,0,0" VerticalAlignment="Top" Height="23" Width="108"/>
         <TextBox x:Name="NumberSoldBox" HorizontalAlignment="Left" Margin="90,67,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="108"/>
+        <DatePicker x:Name="SaleDateBox" HorizontalAlignment="Left" Margin="90,90,0,0" VerticalAlignment="Top" Height="23" Width="108"/>
         <Button x:Name="AddRecordButton" Content="Add" HorizontalAlignment="Left" Margin="90,119,0,0" VerticalAlignment="Top" Click="AddNewRecord"/>
 
     </Grid>

@@ -20,6 +20,8 @@ namespace PHPReSP
 {
     public partial class AddSaleRecordPage : Window
     {
+        private Refresh myRefresh = new Refresh();
+
         public AddSaleRecordPage()
         {
             InitializeComponent();
@@ -40,6 +42,7 @@ namespace PHPReSP
                 cmd.ExecuteNonQuery();
                 //load grid here?
                 connection.Close();
+                MainWindow.RefreshGrid();
 
             } 
             catch (MySqlException ex)

@@ -18,27 +18,25 @@ using System.Windows.Shapes;
 
 namespace PHPReSP
 {
-
-    public partial class EditProductPage : Window
+    public partial class AddProductsPage : Window
     {
-        public string Id { get; }
-        public EditProductPage(string id)
+        public AddProductsPage()
         {
             InitializeComponent();
-            Id = id;
         }
 
-        private void UpdateProduct(object sender, RoutedEventArgs e)
+        private void AddNewProduct(object sender, RoutedEventArgs e)
         {
             MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=password;database=phpsreps_db");
 
             try
             {
-                MySqlCommand cmd = new MySqlCommand("update Products set ProductName='" + ProductName.Text + "', Category='" + ProductCategory.Text +
-                    "', Cost='" + SellPrice.Text + "', RestockPrice='" + RestockPrice.Text + "' where ProductID='" + Id + "';", connection);
+                MySqlCommand cmd = new MySqlCommand("Insert Into Products (ProductName,Category,RestockPrice,SellPrice,CurrentInventory) values " +
+                    "(\"" + ProductNameBox.Text + "\",\"" + ProductCategoryBox.Text +
+                    "\"," + RestockPriceBox.Text + "," + SellPriceBox.Text + "," +
+                    AmountInStockBox.Text + ");", connection);
                 connection.Open();
                 cmd.ExecuteNonQuery();
-                //load grid here?
                 connection.Close();
 
             }
@@ -47,6 +45,7 @@ namespace PHPReSP
                 MessageBox.Show(ex.ToString());
             }
             Hide();
+
         }
     }
 }
