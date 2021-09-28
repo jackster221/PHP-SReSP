@@ -18,32 +18,27 @@ using System.Windows.Shapes;
 
 namespace PHPReSP
 {
-    /// <summary>
-    /// Interaction logic for AddRecord.xaml
-    /// </summary>
-    public partial class AddSaleRecordPage : Window
+
+    public partial class EditProductPage : Window
     {
-        public AddSaleRecordPage()
+        public string Id { get; }
+        public EditProductPage(string id)
         {
             InitializeComponent();
-
+            Id = id;
         }
 
-
-        // When the button is pressed add new sales record
-        private void AddNewRecord(object sender, RoutedEventArgs e)
+        private void UpdateProduct(object sender, RoutedEventArgs e)
         {
-            MySqlConnection connection = new MySqlConnection(
-                "server=localhost;uid=root;pwd=password;database=phpsreps_db");
+            MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=password;database=phpsreps_db");
 
             try
             {
-
-                MySqlCommand cmd = new MySqlCommand("Insert Into Sales (ProductID,NumberSold,SaleDate) values " +
-                    "(" + ProductIDBox.Text + "," + NumberSoldBox.Text +
-                    ", \"" + Convert.ToDateTime(SaleDateBox.Text).ToString("yyyy-MM-dd") + "\");", connection);
+                MySqlCommand cmd = new MySqlCommand("update Products set ProductName='" + ProductName.Text + "', Category='" + ProductCategory.Text +
+                    "', Cost='" + SellPrice.Text + "', RestockPrice='" + RestockPrice.Text + "' where ProductID='" + Id + "';", connection);
                 connection.Open();
                 cmd.ExecuteNonQuery();
+                //load grid here?
                 connection.Close();
 
             }
@@ -52,7 +47,6 @@ namespace PHPReSP
                 MessageBox.Show(ex.ToString());
             }
             Hide();
-
         }
     }
 }

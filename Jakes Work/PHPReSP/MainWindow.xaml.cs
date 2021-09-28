@@ -23,24 +23,15 @@ namespace PHPReSP
         MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=password;database=phpsreps_db");
 
         private DataManager Manager = new DataManager();
-
         private Refresh myRefresh = new Refresh();
-
-
 
         public MainWindow()
         {
             InitializeComponent();
-
             myRefresh.RefreshDataGrid(Maindatagrid, "Sales");
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e) { }
-
-            LoadGrid();
-        }
-
-
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -54,24 +45,13 @@ namespace PHPReSP
                 string filename = "";
                 filename = filedlog.FileName;
 
-
-                Manager.ReadCSV(filename);
+                //ListViewSales.ItemsSource = null;
+                //ListViewSales.ItemsSource = Manager.ReadCSV(filename);
             }
-
-            myRefresh.RefreshDataGrid(Maindatagrid, "Sales");
-
-        }
-
-
-
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            List<SalesRecord> records = new List<SalesRecord>();
-
-          
             Manager.SaveToCSV(Manager._records);
         }
 
@@ -81,7 +61,6 @@ namespace PHPReSP
             AddSaleRecordPage page = new AddSaleRecordPage();
             page.ShowDialog();
         }
-
 
         private void ViewProducts(object sender, RoutedEventArgs e)
         {
@@ -107,15 +86,12 @@ namespace PHPReSP
         {
             MySqlCommand cmd = new MySqlCommand("delete from Sales where SaleID = " + searchbyID.Text + " ", connection);
             connection.Open();
-
             try
             {
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Record Deleted");
-
                 connection.Close();
                 myRefresh.RefreshDataGrid(Maindatagrid, "Sales");
-
             }
             catch (MySqlException ex)
             {
@@ -123,7 +99,6 @@ namespace PHPReSP
             }
             finally
             {
-
                 connection.Close();
             }
         }
@@ -133,6 +108,5 @@ namespace PHPReSP
             EditExisitngSalePage page = new EditExisitngSalePage();
             page.ShowDialog();
         }
-
     }
 }

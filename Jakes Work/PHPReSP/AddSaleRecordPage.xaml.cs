@@ -18,35 +18,33 @@ using System.Windows.Shapes;
 
 namespace PHPReSP
 {
-    /// <summary>
-    /// Interaction logic for AddRecord.xaml
-    /// </summary>
     public partial class AddSaleRecordPage : Window
     {
+        private Refresh myRefresh = new Refresh();
+
         public AddSaleRecordPage()
         {
             InitializeComponent();
-
         }
 
 
         // When the button is pressed add new sales record
         private void AddNewRecord(object sender, RoutedEventArgs e)
         {
-            MySqlConnection connection = new MySqlConnection(
-                "server=localhost;uid=root;pwd=password;database=phpsreps_db");
+            MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=password;database=phpsreps_db");
 
             try
             {
-
                 MySqlCommand cmd = new MySqlCommand("Insert Into Sales (ProductID,NumberSold,SaleDate) values " +
                     "(" + ProductIDBox.Text + "," + NumberSoldBox.Text +
                     ", \"" + Convert.ToDateTime(SaleDateBox.Text).ToString("yyyy-MM-dd") + "\");", connection);
                 connection.Open();
                 cmd.ExecuteNonQuery();
+                //load grid here?
                 connection.Close();
+                MainWindow.RefreshGrid();
 
-            }
+            } 
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.ToString());
