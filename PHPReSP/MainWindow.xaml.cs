@@ -20,6 +20,7 @@ namespace PHPReSP
 {
     public partial class MainWindow : Window, IRefresh
     {
+
         MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=password;database=phpsreps_db");
 
         private DataManager Manager = new DataManager();
@@ -35,10 +36,13 @@ namespace PHPReSP
             myRefresh.RefreshDataGrid(Maindatagrid, "Sales");
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e) { }
-
-            LoadGrid();
+        private void Window_Loaded(object sender, RoutedEventArgs e) 
+        {
+            RefreshGrid();
         }
+
+        
+
 
 
 
@@ -65,13 +69,13 @@ namespace PHPReSP
 
 
 
-        }
+
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             List<SalesRecord> records = new List<SalesRecord>();
 
-          
+
             Manager.SaveToCSV(Manager._records);
         }
 
@@ -135,4 +139,7 @@ namespace PHPReSP
         }
 
     }
+
 }
+
+
