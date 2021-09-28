@@ -10,17 +10,17 @@ namespace PHPReSP
     class SalesRecord
     {
         private System.Guid GUID { get; } //guid to uniquely identify each sale (may replace SaleID)
-        public int SaleID { get; set; }
+        public int ProductID { get; set; }
         //public string ProductID { get; set; }
         public int NumberSold { get; set; }
         public string SaleDate { get; set; }
         
 
 
-        public SalesRecord(int productID, int NumberSold, string SaleDate)
+        public SalesRecord(int product, int NumberSold, string SaleDate)
         {
             //this.SaleID = ID;
-            //this.ProductID = productID;
+            this.ProductID = product;
             this.SaleDate = SaleDate;
             this.NumberSold = NumberSold;
             this.GUID = System.Guid.NewGuid();

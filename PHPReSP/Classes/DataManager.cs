@@ -73,20 +73,17 @@ namespace PHPReSP
         {
 
             MySqlConnection connection = new MySqlConnection(
-                "server=localhost;uid=root;pwd=password;database=phpsreps_db");
+            "server=localhost;uid=root;pwd=password;database=phpsreps_db");
 
 
-                MySqlCommand cmd = new MySqlCommand("Insert Into Sales (ProductID,NumberSold,SaleDate) values " +
-                    "(" + curRecord.SaleID + "," + curRecord.NumberSold +
-                    ", \"" + Convert.ToDateTime(curRecord.SaleDate).ToString("yyyy-MM-dd") + "\");", connection);
-                connection.Open();
-                cmd.ExecuteNonQuery();
-                connection.Close();
-
+            MySqlCommand cmd = new MySqlCommand("Insert Into Sales (ProductID,NumberSold,SaleDate) values " +
+                "(" + curRecord.ProductID + "," + curRecord.NumberSold +
+                ", \"" + Convert.ToDateTime(curRecord.SaleDate).ToString("yyyy-MM-dd") + "\");", connection);
+            connection.Open();
+            cmd.ExecuteNonQuery();
+            connection.Close();
 
         }
-
-       
 
 
     }

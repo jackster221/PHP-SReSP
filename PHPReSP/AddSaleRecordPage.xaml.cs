@@ -38,20 +38,21 @@ namespace PHPReSP
 
             try
             {
-                
-                MySqlCommand cmd = new MySqlCommand("Insert Into Sales (ProductID,NumberSold,SaleDate) values " +
-                    "(" + ProductIDBox.Text + "," + NumberSoldBox.Text + 
-                    ", \"" + Convert.ToDateTime(SaleDateBox.Text).ToString("yyyy-MM-dd") + "\");", connection);
-                    connection.Open();
-                    cmd.ExecuteNonQuery();
-                    connection.Close();
 
-                  }
+                MySqlCommand cmd = new MySqlCommand("Insert Into Sales (ProductID,NumberSold,SaleDate) values " +
+                    "(" + ProductIDBox.Text + "," + NumberSoldBox.Text +
+                    ", \"" + Convert.ToDateTime(SaleDateBox.Text).ToString("yyyy-MM-dd") + "\");", connection);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                connection.Close();
+                
+
+            }
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-                  Hide();
+            Hide();
 
         }
     }

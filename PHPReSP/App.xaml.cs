@@ -11,7 +11,7 @@ namespace PHPReSP
     
     public partial class App : Application
     {
-
+        //public static MainWindow mainpage = new MainWindow();
     
 
     }
