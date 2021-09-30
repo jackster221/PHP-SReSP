@@ -16,7 +16,6 @@ namespace PHPReSP
     class DataManager
     {
 
-        public List<SalesRecord> _records = new List<SalesRecord>();
 
         public DataManager()
         {
@@ -38,7 +37,6 @@ namespace PHPReSP
 
                 SalesRecord curRecord = new SalesRecord(Convert.ToInt32(data[0]), Convert.ToInt32(data[1]), data[2]);
 
-                this._records.Add(curRecord);
                 AddNewRecord(curRecord);
             }
 
