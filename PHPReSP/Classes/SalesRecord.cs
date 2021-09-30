@@ -18,7 +18,7 @@ namespace PHPReSP
 
 
 
-        public SalesRecord(int product, int NumberSold, string SaleDate)
+        public SalesRecord(int product, int NumberSold, string SaleDate, int ID = -9999)
         {
             //this.SaleID = ID;
             this.ProductID = product;

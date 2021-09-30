@@ -75,8 +75,8 @@ namespace PHPReSP
         {
             List<SalesRecord> records = new List<SalesRecord>();
 
-
-            Manager.SaveToCSV(Manager._records);
+            Manager.ConvertDBtoSalesObj();
+            //Manager.SaveToCSV(Manager._records);
         }
 
         // Open the dialog to enter a new sale

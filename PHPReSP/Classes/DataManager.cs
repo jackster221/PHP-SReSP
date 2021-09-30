@@ -38,9 +38,6 @@ namespace PHPReSP
 
                 SalesRecord curRecord = new SalesRecord(Convert.ToInt32(data[0]), Convert.ToInt32(data[1]), data[2]);
 
-
-
-
                 this._records.Add(curRecord);
                 AddNewRecord(curRecord);
             }
@@ -80,6 +77,30 @@ namespace PHPReSP
             cmd.ExecuteNonQuery();
             connection.Close();
 
+        }
+
+        public void ConvertDBtoSalesObj()
+        {
+            List<SalesRecord> records = new List<SalesRecord>();
+
+            MySqlConnection connection = new MySqlConnection(
+            "server=localhost;uid=root;pwd=password;database=phpsreps_db");
+
+            connection.Open();
+
+            MySqlCommand cmd = new MySqlCommand("Select * From Sales;", connection);
+            
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                records.Add(new SalesRecord(Convert.ToInt32(reader[1]), Convert.ToInt32(reader[2]), reader[3].ToString(), Convert.ToInt32(reader[0])));
+            }
+
+            reader.Close();
+            
+            connection.Close();
+            SaveToCSV(records);
         }
 
     }
