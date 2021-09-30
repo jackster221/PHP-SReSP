@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PHPReSP"
+        
         mc:Ignorable="d"
         Title="MainWindow" Height="452" Width="704" Loaded="Window_Loaded">
     <Grid x:Name="ProductsGrid" Margin="0,0,0,0">
@@ -29,7 +30,9 @@
         <DatePicker x:Name="SaleDateBox" HorizontalAlignment="Left" Margin="50,183,0,0" VerticalAlignment="Top" Height="23" Width="118"/>
         <Button x:Name="Refresh" Content="Refresh" HorizontalAlignment="Left" Margin="58,70,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="RefreshGrid" Width="100" Height="21"/>
 
-        <Button Content="View Products" HorizontalAlignment="Left" Margin="557,335,0,0" VerticalAlignment="Top" Click="ViewProducts" Width="100" Height="21"/>
+        <Button Content="View Products" HorizontalAlignment="Left" Margin="558,326,0,0" VerticalAlignment="Top" Click="ViewProducts" Width="100" Height="21" RenderTransformOrigin="0.492,-0.387"/>
+        <Button Content="Generate Line Chart" HorizontalAlignment="Left" Margin="533,364,0,0" VerticalAlignment="Top" Width="124" Click="Button_Click_LineChart"  />
+        <Button Content="Generate Bar Chart" HorizontalAlignment="Left" Margin="533,389,0,0" VerticalAlignment="Top" Width="124" Click="Button_Click_BarChart" />
 
 
     </Grid>

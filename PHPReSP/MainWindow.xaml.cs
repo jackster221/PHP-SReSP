@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace PHPReSP
 {
     public partial class MainWindow : Window, IRefresh
@@ -76,7 +77,7 @@ namespace PHPReSP
             List<SalesRecord> records = new List<SalesRecord>();
 
             Manager.ConvertDBtoSalesObj();
-            //Manager.SaveToCSV(Manager._records);
+            Manager.SaveToCSV(Manager.records);
         }
 
         // Open the dialog to enter a new sale
@@ -138,6 +139,17 @@ namespace PHPReSP
             page.ShowDialog();
         }
 
+        private void Button_Click_LineChart(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_BarChart(object sender, RoutedEventArgs e)
+        {
+            var viewer = new ChartViewer();
+            viewer.Show();
+
+        }
     }
 
 }

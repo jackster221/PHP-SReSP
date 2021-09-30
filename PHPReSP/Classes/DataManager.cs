@@ -16,6 +16,7 @@ namespace PHPReSP
     class DataManager
     {
 
+        public List<SalesRecord> records = new List<SalesRecord>();
 
         public DataManager()
         {
@@ -79,7 +80,7 @@ namespace PHPReSP
 
         public void ConvertDBtoSalesObj()
         {
-            List<SalesRecord> records = new List<SalesRecord>();
+            records.Clear();
 
             MySqlConnection connection = new MySqlConnection(
             "server=localhost;uid=root;pwd=password;database=phpsreps_db");
@@ -98,7 +99,7 @@ namespace PHPReSP
             reader.Close();
             
             connection.Close();
-            SaveToCSV(records);
+            
         }
 
     }
