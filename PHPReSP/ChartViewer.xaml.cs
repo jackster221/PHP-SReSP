@@ -31,29 +31,47 @@ namespace PHPReSP
         {
             InitializeComponent();
            
-            RefreshBarChart();
+            ChartData(0);
         }
 
-        public void RefreshBarChart()
+
+
+        public void ChartData(int index)
         {
             manager.ConvertDBtoSalesObj();
-            var revenues = new ItemsRevenue();
-            var chartData = new KeyValuePair<string, double>[revenues.items.Count()];
 
-
-            for (int i = 0; i <= revenues.items.Count() - 1; i++)
+            if (index == 0)
             {
-                chartData[i] = new KeyValuePair<string, double>(revenues.items[i], revenues.revenues[i]);
+                var revenues = new ItemsRevenue();
+                var chartData = new KeyValuePair<string, double>[revenues.items.Count()];
+
+
+                for (int i = 0; i <= revenues.items.Count() - 1; i++)
+                {
+                    chartData[i] = new KeyValuePair<string, double>(revenues.items[i], revenues.revenues[i]);
+                }
+
+                ((BarSeries)mcChart.Series[0]).ItemsSource = chartData;
+            }
+            else
+            {
+                var revenues = new MonthsRevenue();
+                var chartData = new KeyValuePair<string, double>[revenues.months.Count()];
+
+
+                for (int i = 0; i <= revenues.months.Count() - 1; i++)
+                {
+                    chartData[i] = new KeyValuePair<string, double>(revenues.months[i], revenues.revenues[i]);
+                }
+                ((BarSeries)mcChart.Series[0]).ItemsSource = chartData;
             }
 
-            
-
-            ((BarSeries)mcChart.Series[0]).ItemsSource = chartData;
-
-           
         }
 
-
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ChartData(cbx_chartType.SelectedIndex);
+        }
     }
         
     
