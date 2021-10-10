@@ -51,8 +51,42 @@ namespace PHPReSP
             {
                 MessageBox.Show(ex.ToString());
             }
-            Hide();
 
+
+            Int32 stock = 0;
+            string productName;
+            try
+            {
+                MySqlCommand cmd2 = new MySqlCommand("SELECT CurrentInventory FROM Products WHERE ProductID=" + Int32.Parse(ProductIDBox.Text) + ";", connection);
+
+                connection.Open();
+                stock = (Int32)cmd2.ExecuteScalar();
+                stock = stock - Int32.Parse(NumberSoldBox.Text);
+                connection.Close();
+
+                MySqlCommand cmd = new MySqlCommand("update Products set CurrentInventory=" + stock + " where ProductID=" + Int32.Parse(ProductIDBox.Text) + ";", connection);
+                MySqlCommand cmd3 = new MySqlCommand("SELECT ProductName FROM Products WHERE ProductID="+ Int32.Parse(ProductIDBox.Text) + ";", connection);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                productName = (string)cmd3.ExecuteScalar();
+                connection.Close();
+
+                //just picked 10 as the low amount. Can easily be changed
+                if (stock <= 10)
+                {
+                    MessageBox.Show("Warning: Stock Level on " + productName + " is low (less than 10). Current stock amount: " + stock);
+                }
+                else
+                {
+                    MessageBox.Show("Done");
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            Hide();
         }
     }
 }
