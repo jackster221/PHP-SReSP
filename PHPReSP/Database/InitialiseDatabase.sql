@@ -16,13 +16,12 @@ create table Sales (
     NumberSold int,
     SaleDate date
 );
-
-insert into Products (ProductName, Category, RestockPrice, SellPrice, CurrentInventory) 
-			  values ("Toothpaste", "Dental Care", 1.49, 3.25, 100),
-					 ("Multivitamin", "Vitamins", 9.99, 15.99, 100),
-					 ("Panadol", "Medicines", 4.49, 8.99, 100),
-					 ("Cleanser", "Beauty", 8.99, 12.49, 100),
-					 ("David Beckham", "Fragrances", 39.99, 49.99, 100);
+insert into Products (ProductName, Category, RestockPrice, SellPrice, CurrentInventory, RestockLevel) 
+			  values ("Toothpaste", "Dental Care", 1.49, 3.25, 100, 10),
+					 ("Multivitamin", "Vitamins", 9.99, 15.99, 100, 10),
+					 ("Panadol", "Medicines", 4.49, 8.99, 100, 10),
+					 ("Cleanser", "Beauty", 8.99, 12.49, 100, 10),
+					 ("David Beckham", "Fragrances", 39.99, 49.99, 100, 10);
 
 insert into Sales (ProductID, NumberSold, SaleDate)
 		values (1, 2, "2021-08-01"),
