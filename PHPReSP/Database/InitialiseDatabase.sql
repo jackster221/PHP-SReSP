@@ -7,7 +7,8 @@ create table Products (
     Category varchar(255),
 	RestockPrice double,
     SellPrice double,
-    CurrentInventory int
+    CurrentInventory int,
+	RestockLevel int
 );
 
 create table Sales (
