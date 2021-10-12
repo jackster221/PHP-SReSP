@@ -141,12 +141,14 @@ namespace PHPReSP
 
         private void Button_Click_LineChart(object sender, RoutedEventArgs e)
         {
+            var viewer = new LineChartViewer();
+            viewer.Show();
 
         }
 
         private void Button_Click_BarChart(object sender, RoutedEventArgs e)
         {
-            var viewer = new ChartViewer();
+            var viewer = new BarChartViewer();
             viewer.Show();
 
         }

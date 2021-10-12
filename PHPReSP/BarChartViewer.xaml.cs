@@ -23,11 +23,11 @@ using PHPReSP.Classes;
 namespace PHPReSP
 {
 
-    public partial class ChartViewer : Window
+    public partial class BarChartViewer : Window
     {
         private DataManager manager = new DataManager();
 
-        public ChartViewer()
+        public BarChartViewer()
         {
             InitializeComponent();
            
