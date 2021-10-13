@@ -31,7 +31,7 @@ namespace PHPReSP
         {
             String queryString = "";
 
-            String queryMonthCategory = "SELECT products.Category, SUM(sales.NumberSold) AS Sold, " +
+            String queryMonthCategory = "SELECT products.Category, SUM(sales.NumberSold) AS Predicted_Sales, " +
                 "SUM(CurrentInventory) - SUM(sales.NumberSold) AS Reminaing, " +
                 "IF(SUM(CurrentInventory) < SUM(sales.NumberSold), \"RESTOCK REQUIRED\", \"\") AS Restock  FROM sales " +
                 "INNER JOIN Products ON Products.productID = sales.ProductID " +
@@ -39,14 +39,14 @@ namespace PHPReSP
                 "AND YEAR(SaleDate) = YEAR(CURRENT_DATE() - INTERVAL 1 MONTH) " +
                 "GROUP BY Category; ";
 
-            String queryWeekCategory = "SELECT products.Category, SUM(sales.NumberSold) AS Sold, " +
+            String queryWeekCategory = "SELECT products.Category, SUM(sales.NumberSold) AS Predicted_Sales, " +
                 "SUM(CurrentInventory) - SUM(sales.NumberSold) AS Reminaing, " +
                 "IF(SUM(CurrentInventory) < SUM(sales.NumberSold), \"RESTOCK REQUIRED\", \"\") AS Restock  FROM sales " +
                 "INNER JOIN Products ON Products.productID = sales.ProductID " +
                 "WHERE YEARWEEK(SaleDate) = YEARWEEK(NOW() - INTERVAL 1 WEEK) " +
                 "GROUP BY Category;";
 
-            String queryMonthProduct = "SELECT products.productName, SUM(sales.NumberSold) AS Sold, " +
+            String queryMonthProduct = "SELECT products.productName, SUM(sales.NumberSold) AS Predicted_Sales, " +
                 "SUM(CurrentInventory) - SUM(sales.NumberSold) AS Reminaing, " +
                 "IF(SUM(CurrentInventory) < SUM(sales.NumberSold), \"RESTOCK REQUIRED\", \"\") AS Restock  FROM sales " +
                 "INNER JOIN Products ON Products.productID = sales.ProductID " +
@@ -54,7 +54,7 @@ namespace PHPReSP
                 "AND YEAR(SaleDate) = YEAR(CURRENT_DATE() - INTERVAL 1 MONTH) " +
                 "GROUP BY ProductName; ";
 
-            String queryWeekProduct = "SELECT products.productName, SUM(sales.NumberSold) AS Sold, " +
+            String queryWeekProduct = "SELECT products.productName, SUM(sales.NumberSold) AS Predicted_Sales, " +
                 "SUM(CurrentInventory) - SUM(sales.NumberSold) AS Reminaing, " +
                 "IF(SUM(CurrentInventory) < SUM(sales.NumberSold), \"RESTOCK REQUIRED\", \"\") AS Restock  FROM sales " +
                 "INNER JOIN Products ON Products.productID = sales.ProductID " +
