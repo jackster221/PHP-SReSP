@@ -152,6 +152,12 @@ namespace PHPReSP
             viewer.Show();
 
         }
+
+        private void Button_Click_Prediction(object sender, RoutedEventArgs e)
+        {
+            PredictionPage page = new PredictionPage();
+            page.ShowDialog();
+        }
     }
 
 }

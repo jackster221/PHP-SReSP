@@ -51,6 +51,10 @@ namespace PHPReSP
             {
                 MessageBox.Show(ex.ToString());
             }
+
+            // TODO: update the current inventory to remove the number sold
+            // LAST_INSERT_ID
+
             Hide();
 
         }
