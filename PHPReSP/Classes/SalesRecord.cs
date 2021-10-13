@@ -31,7 +31,7 @@ namespace PHPReSP
 
                 connection.Open();
 
-                MySqlCommand cmd = new MySqlCommand("Select products.productName, SUM(sales.NumberSold * products.price) As Revenue From Sales INNER JOIN Products ON products.ProductID = Sales.ProductID WHERE sales.SaleID =" + ID + ";", connection);
+                MySqlCommand cmd = new MySqlCommand("Select products.productName, SUM(sales.NumberSold * products.sellPrice) As Revenue From Sales INNER JOIN Products ON products.ProductID = Sales.ProductID WHERE sales.SaleID =" + ID + ";", connection);
 
                 MySqlDataReader reader = cmd.ExecuteReader();
 

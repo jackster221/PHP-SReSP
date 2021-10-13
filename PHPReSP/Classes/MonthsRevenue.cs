@@ -30,7 +30,7 @@ namespace PHPReSP.Classes
 
             connection.Open();
 
-            MySqlCommand cmd = new MySqlCommand("SELECT EXTRACT(YEAR_MONTH FROM sales.SaleDate) AS Month, SUM(sales.NumberSold * products.price) AS Revenue FROM sales INNER JOIN Products ON Products.productID = sales.ProductID GROUP BY Month ORDER BY sales.SaleDate; ", connection);
+            MySqlCommand cmd = new MySqlCommand("SELECT EXTRACT(YEAR_MONTH FROM sales.SaleDate) AS Month, SUM(sales.NumberSold * products.sellPrice) AS Revenue FROM sales INNER JOIN Products ON Products.productID = sales.ProductID GROUP BY Month ORDER BY sales.SaleDate; ", connection);
 
             MySqlDataReader reader = cmd.ExecuteReader();
 
