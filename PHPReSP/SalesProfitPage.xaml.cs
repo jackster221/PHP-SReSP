@@ -34,7 +34,7 @@ namespace PHPReSP
         
             public void LoadGrid()
             {
-                  MySqlCommand cmd = new MySqlCommand("select products.productName, ROUND(SUM(sales.NumberSold) * products.Price - RestockPrice * CurrentInventory, 2) as TotalProfit from sales inner join Products on Products.productID = sales.ProductID GROUP BY ProductName", connection);
+                  MySqlCommand cmd = new MySqlCommand("select products.ProductID, products.productName, SUM(sales.NumberSold) as NumberSold, ROUND(SUM(sales.NumberSold) * products.Price, 2) as SaleRevenue, ROUND(SUM(sales.NumberSold) * products.Price - RestockPrice * CurrentInventory, 2) as TotalProfit from sales inner join Products on Products.productID = sales.ProductID GROUP BY ProductName", connection);
                   DataTable dt = new DataTable();
                   connection.Open();
                   MySqlDataReader sdr = cmd.ExecuteReader();
