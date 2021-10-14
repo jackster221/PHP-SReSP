@@ -25,6 +25,7 @@
         <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="300,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-au" Text="Product ID"/></TextBlock>
         <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="652,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-au" Text="Current Inventory"/></TextBlock>
         <Button x:Name="Refresh" Content="Refresh" HorizontalAlignment="Left" Margin="671,171,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="RefreshGrid" Width="100" Height="21" Grid.ColumnSpan="2"/>
+        <Button Content="Ordering Costs" HorizontalAlignment="Left" Margin="671,202,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="OrderingCosts" Width="100" Grid.Column="1" Height="20"/>
 
     </Grid>
 </Window>

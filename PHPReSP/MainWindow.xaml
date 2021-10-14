@@ -34,6 +34,7 @@
         <Button Content="Generate Line Chart" HorizontalAlignment="Left" Margin="533,364,0,0" VerticalAlignment="Top" Width="124" Click="Button_Click_LineChart"  />
         <Button Content="Generate Bar Chart" HorizontalAlignment="Left" Margin="533,389,0,0" VerticalAlignment="Top" Width="124" Click="Button_Click_BarChart" />
         <Button Content="Predict the Future" HorizontalAlignment="Left" Margin="50,389,0,0" VerticalAlignment="Top" Width="124" Click="Button_Click_Prediction" />
+        <Button Content="View Total Sales Profit" HorizontalAlignment="Left" Margin="50,359,0,0" VerticalAlignment="Top" Click="ViewSalesProfit" Width="124" Height="21" RenderTransformOrigin="0.492,-0.387"/>
 
     </Grid>
 </Window>

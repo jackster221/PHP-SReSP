@@ -28,8 +28,6 @@ namespace PHPReSP
 
         private Refresh myRefresh = new Refresh();
 
-
-
         public MainWindow()
         {
             InitializeComponent();
@@ -41,11 +39,6 @@ namespace PHPReSP
         {
             RefreshGrid();
         }
-
-        
-
-
-
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -67,11 +60,6 @@ namespace PHPReSP
 
         }
 
-
-
-
-
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             List<SalesRecord> records = new List<SalesRecord>();
@@ -88,9 +76,9 @@ namespace PHPReSP
         }
 
 
-        private void ViewProducts(object sender, RoutedEventArgs e)
+        private void ViewSalesProfit(object sender, RoutedEventArgs e)
         {
-            ProductRecordPage page = new ProductRecordPage();
+            SalesProfitPage page = new SalesProfitPage();
             page.ShowDialog();
         }
 
@@ -158,7 +146,13 @@ namespace PHPReSP
             PredictionPage page = new PredictionPage();
             page.ShowDialog();
         }
-    }
+
+            private void ViewProducts(object sender, RoutedEventArgs e)
+            {
+                  ProductRecordPage page = new ProductRecordPage();
+                  page.ShowDialog();
+            }
+      }
 
 }
 
