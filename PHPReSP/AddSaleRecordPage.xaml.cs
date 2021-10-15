@@ -44,6 +44,16 @@ namespace PHPReSP
                     ", \"" + Convert.ToDateTime(SaleDateBox.Text).ToString("yyyy-MM-dd") + "\");", connection);
                 connection.Open();
                 cmd.ExecuteNonQuery();
+
+                // TODO: update the current inventory to remove the number sold
+                // LAST_INSERT_ID
+
+                String query = "UPDATE Products " +
+                    "SET CurrentInventory=CurrentInventory-" + NumberSoldBox.Text +
+                    " WHERE ProductID=" + ProductIDBox.Text + ";" ;
+                cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+
                 connection.Close();
 
             }
@@ -51,10 +61,6 @@ namespace PHPReSP
             {
                 MessageBox.Show(ex.ToString());
             }
-
-            // TODO: update the current inventory to remove the number sold
-            // LAST_INSERT_ID
-
             Hide();
 
         }
