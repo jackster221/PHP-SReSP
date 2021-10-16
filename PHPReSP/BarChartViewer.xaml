@@ -13,10 +13,10 @@
                Width="800" Height="430"
                Background="LightSteelBlue">
             <DVC:Chart.Series>
-                <DVC:BarSeries Title="Total Revenue($)"    
+                <DVC:ColumnSeries Title="Total Revenue($)"    
                 IndependentValueBinding="{Binding Path=Key}"
                 DependentValueBinding="{Binding Path=Value}">
-                </DVC:BarSeries>
+                </DVC:ColumnSeries>
             </DVC:Chart.Series>
         </DVC:Chart>
         <ComboBox x:Name="cbx_chartType" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" IsDropDownOpen="True" IsReadOnly="True" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0">

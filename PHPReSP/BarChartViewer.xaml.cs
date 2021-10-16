@@ -51,7 +51,7 @@ namespace PHPReSP
                     chartData[i] = new KeyValuePair<string, double>(revenues.items[i], revenues.revenues[i]);
                 }
 
-                ((BarSeries)mcChart.Series[0]).ItemsSource = chartData;
+                ((ColumnSeries)mcChart.Series[0]).ItemsSource = chartData;
             }
             else
             {
@@ -63,7 +63,7 @@ namespace PHPReSP
                 {
                     chartData[i] = new KeyValuePair<string, double>(revenues.months[i], revenues.revenues[i]);
                 }
-                ((BarSeries)mcChart.Series[0]).ItemsSource = chartData;
+                ((ColumnSeries)mcChart.Series[0]).ItemsSource = chartData;
             }
 
         }

@@ -30,7 +30,7 @@ namespace PHPReSP.Classes
 
             connection.Open();
 
-            MySqlCommand cmd = new MySqlCommand("SELECT EXTRACT(YEAR_MONTH FROM sales.SaleDate) AS Month, SUM(sales.NumberSold * products.sellPrice) AS Revenue FROM sales INNER JOIN Products ON Products.productID = sales.ProductID GROUP BY Month ORDER BY sales.SaleDate; ", connection);
+            MySqlCommand cmd = new MySqlCommand("SELECT EXTRACT(YEAR_MONTH FROM sales.SaleDate) AS Month, SUM(sales.NumberSold * products.Price) AS Revenue FROM sales INNER JOIN Products ON Products.productID = sales.ProductID GROUP BY Month ORDER BY sales.SaleDate; ", connection);
 
             MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -38,7 +38,49 @@ namespace PHPReSP.Classes
             {
                 while (reader.Read())
                 {
-                    this.months.Add(reader[0].ToString());
+                    string curDate = reader[0].ToString().Substring(4);
+
+                    switch (curDate)
+                    {
+                        case "01":
+                            this.months.Add("January");
+                            break;
+                        case "02":
+                            this.months.Add("Febuary");
+                            break;
+                        case "03":
+                            this.months.Add("March");
+                            break;
+                        case "04":
+                            this.months.Add("April");
+                            break;
+                        case "05":
+                            this.months.Add("May");
+                            break;
+                        case "06":
+                            this.months.Add("June");
+                            break;
+                        case "07":
+                            this.months.Add("July");
+                            break;
+                        case "08":
+                            this.months.Add("August");
+                            break;
+                        case "09":
+                            this.months.Add("September");
+                            break;
+                        case "10":
+                            this.months.Add("October");
+                            break;
+                        case "11":
+                            this.months.Add("November");
+                            break;
+                        case "12":
+                            this.months.Add("December");
+                            break;
+
+                    }
+                    
                     this.revenues.Add(Convert.ToDouble(reader[1]));
                 }
             }
