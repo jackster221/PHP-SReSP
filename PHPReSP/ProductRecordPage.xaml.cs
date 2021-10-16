@@ -83,6 +83,25 @@ namespace PHPReSP
             }
         }
 
+        private void SetRestockLevel(object sender, RoutedEventArgs e)
+        {
+            if (RestockProductID.Text != "" & RestockLevel.Text != "")
+            {
+                MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=password;database=phpsreps_db");
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand("update Products set RestockLevel=" + Int32.Parse(RestockLevel.Text) + " where ProductID=" + Int32.Parse(RestockProductID.Text) + ";", connection);
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                    MessageBox.Show("Done");
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
         private void RefreshGrid(object sender, RoutedEventArgs e)
         {
             myRefresh.RefreshDataGrid(ProductsGrid, "Products");

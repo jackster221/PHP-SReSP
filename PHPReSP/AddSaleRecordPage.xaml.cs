@@ -55,6 +55,7 @@ namespace PHPReSP
 
             Int32 stock = 0;
             string productName;
+            int RestockAmnt;
             try
             {
                 MySqlCommand cmd2 = new MySqlCommand("SELECT CurrentInventory FROM Products WHERE ProductID=" + Int32.Parse(ProductIDBox.Text) + ";", connection);
@@ -66,15 +67,17 @@ namespace PHPReSP
 
                 MySqlCommand cmd = new MySqlCommand("update Products set CurrentInventory=" + stock + " where ProductID=" + Int32.Parse(ProductIDBox.Text) + ";", connection);
                 MySqlCommand cmd3 = new MySqlCommand("SELECT ProductName FROM Products WHERE ProductID="+ Int32.Parse(ProductIDBox.Text) + ";", connection);
+                MySqlCommand cmd4 = new MySqlCommand("SELECT RestockLevel FROM Products WHERE ProductID=" + Int32.Parse(ProductIDBox.Text) + ";", connection);
                 connection.Open();
                 cmd.ExecuteNonQuery();
                 productName = (string)cmd3.ExecuteScalar();
+                RestockAmnt = (Int32)cmd4.ExecuteScalar();
                 connection.Close();
 
                 //just picked 10 as the low amount. Can easily be changed
-                if (stock <= 10)
+                if (stock <= RestockAmnt)
                 {
-                    MessageBox.Show("Warning: Stock Level on " + productName + " is low (less than 10). Current stock amount: " + stock);
+                    MessageBox.Show("Warning: Stock Level on " + productName + " is low (less than "+ RestockAmnt +"). Current stock amount: " + stock);
                 }
                 else
                 {

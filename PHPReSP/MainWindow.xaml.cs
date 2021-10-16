@@ -109,6 +109,27 @@ namespace PHPReSP
 
         private void DeleteRecord(object sender, RoutedEventArgs e)
         {
+            //update inventory
+            int SaleAmount;
+            int Stock;
+            int ProductID;
+            MySqlCommand cmd5 = new MySqlCommand("SELECT ProductID FROM Sales WHERE SaleID=" + Int32.Parse(searchbyID.Text) + ";", connection);
+            
+            connection.Open();
+            ProductID = (Int32)cmd5.ExecuteScalar();
+            connection.Close();
+            MySqlCommand cmd2 = new MySqlCommand("SELECT CurrentInventory FROM Products WHERE ProductID=" + ProductID + ";", connection);
+            MySqlCommand cmd3 = new MySqlCommand("SELECT NumberSold FROM Sales WHERE SaleID=" + Int32.Parse(searchbyID.Text) + ";", connection);
+            connection.Open();
+            Stock = (Int32)cmd2.ExecuteScalar();
+            SaleAmount = (Int32)cmd3.ExecuteScalar();
+            Stock = Stock + SaleAmount;
+            connection.Close();
+            MySqlCommand cmd4 = new MySqlCommand("update Products set CurrentInventory=" + Stock + " where ProductID=" + ProductID + ";", connection);
+            connection.Open();
+            cmd4.ExecuteNonQuery();
+            connection.Close();
+
             MySqlCommand cmd = new MySqlCommand("delete from Sales where SaleID = " + searchbyID.Text + " ", connection);
             connection.Open();
 
