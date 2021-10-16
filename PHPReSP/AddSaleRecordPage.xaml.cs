@@ -38,16 +38,14 @@ namespace PHPReSP
 
             try
             {
-
+                // Add record of sale
                 MySqlCommand cmd = new MySqlCommand("Insert Into Sales (ProductID,NumberSold,SaleDate) values " +
                     "(" + ProductIDBox.Text + "," + NumberSoldBox.Text +
                     ", \"" + Convert.ToDateTime(SaleDateBox.Text).ToString("yyyy-MM-dd") + "\");", connection);
                 connection.Open();
                 cmd.ExecuteNonQuery();
 
-                // TODO: update the current inventory to remove the number sold
-                // LAST_INSERT_ID
-
+                // Remove sold items from inventory
                 String query = "UPDATE Products " +
                     "SET CurrentInventory=CurrentInventory-" + NumberSoldBox.Text +
                     " WHERE ProductID=" + ProductIDBox.Text + ";" ;
