@@ -19,14 +19,14 @@ using System.Windows.Shapes;
 namespace PHPReSP
 {
 
-    public partial class SalesProfitPage : Window, IRefresh
+    public partial class TotalProfitRevenue : Window, IRefresh
     {
 
         MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=password;database=phpsreps_db");
 
         private Refresh myRefresh = new Refresh();
 
-        public SalesProfitPage()
+        public TotalProfitRevenue()
         {
             InitializeComponent();
                   LoadGrid();
@@ -34,19 +34,13 @@ namespace PHPReSP
         
             public void LoadGrid()
             {
-                  MySqlCommand saleProfit = new MySqlCommand("select saleID, sales.ProductID, NumberSold, SaleDate, NumberSold * products.SellPrice as SaleProfit from sales, Products where sales.ProductID = Products.productID ORDER BY SaleDate ASC", connection);
+                  MySqlCommand cmd = new MySqlCommand("select products.ProductID, products.productName, SUM(sales.NumberSold) as NumberSold, ROUND(SUM(sales.NumberSold) * products.SellPrice, 2) as SaleRevenue, ROUND(SUM(sales.NumberSold) * products.SellPrice - RestockPrice * CurrentInventory, 2) as TotalProfit from sales inner join Products on Products.productID = sales.ProductID GROUP BY ProductName", connection);
                   DataTable dt = new DataTable();
                   connection.Open();
-                  MySqlDataReader sdr = saleProfit.ExecuteReader();
+                  MySqlDataReader sdr = cmd.ExecuteReader();
                   dt.Load(sdr);
                   connection.Close();
                   ProductsGrid.ItemsSource = dt.DefaultView;
-            }
-
-            private void TotalSales(object sender, RoutedEventArgs e)
-            {
-                  TotalProfitRevenue page = new TotalProfitRevenue();
-                  page.Show();
             }
       }
 }
