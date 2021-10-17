@@ -11,15 +11,16 @@
 
         <DVC:Chart Canvas.Top="80" Canvas.Left="10" Name="mcChart"
                Width="800" Height="430"
-               Background="LightSteelBlue">
+               Background="LightSteelBlue"
+               Title="Monthly Sales">
             <DVC:Chart.Series>
-                <DVC:ColumnSeries Title="Total Revenue($)"    
+                <DVC:BarSeries Title="Total Revenue($)"    
                 IndependentValueBinding="{Binding Path=Key}"
                 DependentValueBinding="{Binding Path=Value}">
-                </DVC:ColumnSeries>
+                </DVC:BarSeries>
             </DVC:Chart.Series>
         </DVC:Chart>
-        <ComboBox x:Name="cbx_chartType" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" IsDropDownOpen="True" IsReadOnly="True" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0">
+        <ComboBox x:Name="cbx_chartType" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="137" IsDropDownOpen="True" IsReadOnly="True" SelectionChanged="ComboBox_SelectionChanged" SelectedIndex="0">
             <ComboBoxItem Content="Revenue By Item"/>
             <ComboBoxItem Content="Revenue By Month"/>
         </ComboBox>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PHPReSP"
         mc:Ignorable="d"
         Title="DisplayProducts" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FFFFFFDF">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>

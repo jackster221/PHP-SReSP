@@ -16,9 +16,7 @@ using System.Windows.Shapes;
 
 namespace PHPReSP
 {
-    /// <summary>
-    /// Interaction logic for PredictionPage.xaml
-    /// </summary>
+
     public partial class PredictionPage : Window
     {
         public PredictionPage()
@@ -32,7 +30,7 @@ namespace PHPReSP
             String queryString = "";
 
             String queryMonthCategory = "SELECT products.Category, SUM(sales.NumberSold) AS Predicted_Sales, " +
-                "SUM(CurrentInventory) - SUM(sales.NumberSold) AS Reminaing, " +
+                "CurrentInventory - SUM(sales.NumberSold) AS Remaining, " +
                 "IF(SUM(CurrentInventory) < SUM(sales.NumberSold), \"RESTOCK REQUIRED\", \"\") AS Restock  FROM sales " +
                 "INNER JOIN Products ON Products.productID = sales.ProductID " +
                 "WHERE MONTH(SaleDate) = MONTH(CURRENT_DATE() - INTERVAL 1 MONTH) " +
@@ -40,14 +38,14 @@ namespace PHPReSP
                 "GROUP BY Category; ";
 
             String queryWeekCategory = "SELECT products.Category, SUM(sales.NumberSold) AS Predicted_Sales, " +
-                "SUM(CurrentInventory) - SUM(sales.NumberSold) AS Reminaing, " +
+                "CurrentInventory - SUM(sales.NumberSold) AS Remaining, " +
                 "IF(SUM(CurrentInventory) < SUM(sales.NumberSold), \"RESTOCK REQUIRED\", \"\") AS Restock  FROM sales " +
                 "INNER JOIN Products ON Products.productID = sales.ProductID " +
                 "WHERE YEARWEEK(SaleDate) = YEARWEEK(NOW() - INTERVAL 1 WEEK) " +
                 "GROUP BY Category;";
 
             String queryMonthProduct = "SELECT products.productName, SUM(sales.NumberSold) AS Predicted_Sales, " +
-                "SUM(CurrentInventory) - SUM(sales.NumberSold) AS Reminaing, " +
+                "CurrentInventory - SUM(sales.NumberSold) AS Remaining, " +
                 "IF(SUM(CurrentInventory) < SUM(sales.NumberSold), \"RESTOCK REQUIRED\", \"\") AS Restock  FROM sales " +
                 "INNER JOIN Products ON Products.productID = sales.ProductID " +
                 "WHERE MONTH(SaleDate) = MONTH(CURRENT_DATE() - INTERVAL 1 MONTH) " +
@@ -55,7 +53,7 @@ namespace PHPReSP
                 "GROUP BY ProductName; ";
 
             String queryWeekProduct = "SELECT products.productName, SUM(sales.NumberSold) AS Predicted_Sales, " +
-                "SUM(CurrentInventory) - SUM(sales.NumberSold) AS Reminaing, " +
+                "CurrentInventory - SUM(sales.NumberSold) AS Remaining, " +
                 "IF(SUM(CurrentInventory) < SUM(sales.NumberSold), \"RESTOCK REQUIRED\", \"\") AS Restock  FROM sales " +
                 "INNER JOIN Products ON Products.productID = sales.ProductID " +
                 "WHERE YEARWEEK(SaleDate) = YEARWEEK(NOW() - INTERVAL 1 WEEK) " +
@@ -90,12 +88,18 @@ namespace PHPReSP
             dt.Load(sdr);
             connection.Close();
             dtg.ItemsSource = dt.DefaultView;
-
         }
 
         private void Predict_Sales(object sender, EventArgs e)
         {
             Predict_Sales();
+        }
+
+        private void Close(object sender, RoutedEventArgs e)
+        {
+            HomeInterface page = new HomeInterface();
+            page.Show();
+            this.Close();
         }
     }
 }

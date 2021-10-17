@@ -29,18 +29,19 @@ namespace PHPReSP
         public ProductOrderingCosts()
         {
             InitializeComponent();
-                  LoadGrid();
+            LoadGrid();
         }
         
-            public void LoadGrid()
-            {
-                  MySqlCommand cmd = new MySqlCommand("select ProductID, ProductName, RestockPrice, CurrentInventory, RestockPrice * CurrentInventory as OrderingCosts from Products", connection);
-                  DataTable dt = new DataTable();
-                  connection.Open();
-                  MySqlDataReader sdr = cmd.ExecuteReader();
-                  dt.Load(sdr);
-                  connection.Close();
-                  ProductsGrid.ItemsSource = dt.DefaultView;
-            }
-      }
+        public void LoadGrid()
+        {
+            MySqlCommand cmd = new MySqlCommand("select ProductID, ProductName, RestockPrice, CurrentInventory, RestockPrice * CurrentInventory as OrderingCosts from Products", connection);
+            DataTable dt = new DataTable();
+            connection.Open();
+            MySqlDataReader sdr = cmd.ExecuteReader();
+            dt.Load(sdr);
+            connection.Close();
+            ProductsGrid.ItemsSource = dt.DefaultView;
+        }
+    }
 }
+ 

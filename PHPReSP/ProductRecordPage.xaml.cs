@@ -87,11 +87,21 @@ namespace PHPReSP
         {
             myRefresh.RefreshDataGrid(ProductsGrid, "Products");
         }
+<<<<<<<< HEAD:PHPReSP/ProductRecordPage.xaml.cs
 
             private void OrderingCosts(object sender, RoutedEventArgs e)
             {
                   ProductOrderingCosts page = new ProductOrderingCosts();
                   page.ShowDialog();
             }
-      }
+
+        private void Close(object sender, RoutedEventArgs e)
+        {
+            HomeInterface page = new HomeInterface();
+            page.Show();
+            this.Close();
+        }
+========
+>>>>>>>> Jake:Jakes Work/PHPReSP/ProductRecordPage.xaml.cs
+    }
 }

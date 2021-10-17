@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PHPReSP"
         mc:Ignorable="d"
         Title="DisplayProducts" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FFFFFFDF">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
@@ -25,7 +25,11 @@
         <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="300,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-au" Text="Product ID"/></TextBlock>
         <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="652,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-au" Text="Current Inventory"/></TextBlock>
         <Button x:Name="Refresh" Content="Refresh" HorizontalAlignment="Left" Margin="671,171,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="RefreshGrid" Width="100" Height="21" Grid.ColumnSpan="2"/>
+<<<<<<<< HEAD:PHPReSP/ProductRecordPage.xaml
         <Button Content="Ordering Costs" HorizontalAlignment="Left" Margin="671,202,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="OrderingCosts" Width="100" Grid.Column="1" Height="20"/>
+        <Button Content="Return Home" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="671,25,0,0" VerticalAlignment="Top" Height="22" Width="100" Click="Close"/>
+========
+>>>>>>>> Jake:Jakes Work/PHPReSP/ProductRecordPage.xaml
 
     </Grid>
 </Window>

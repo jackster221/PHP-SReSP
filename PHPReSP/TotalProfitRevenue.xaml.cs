@@ -29,18 +29,18 @@ namespace PHPReSP
         public TotalProfitRevenue()
         {
             InitializeComponent();
-                  LoadGrid();
+            LoadGrid();
         }
-        
-            public void LoadGrid()
-            {
-                  MySqlCommand cmd = new MySqlCommand("select products.ProductID, products.productName, SUM(sales.NumberSold) as NumberSold, ROUND(SUM(sales.NumberSold) * products.SellPrice, 2) as SaleRevenue, ROUND(SUM(sales.NumberSold) * products.SellPrice - RestockPrice * CurrentInventory, 2) as TotalProfit from sales inner join Products on Products.productID = sales.ProductID GROUP BY ProductName", connection);
-                  DataTable dt = new DataTable();
-                  connection.Open();
-                  MySqlDataReader sdr = cmd.ExecuteReader();
-                  dt.Load(sdr);
-                  connection.Close();
-                  ProductsGrid.ItemsSource = dt.DefaultView;
-            }
-      }
+
+        public void LoadGrid()
+        {
+            MySqlCommand cmd = new MySqlCommand("select products.ProductID, products.productName, SUM(sales.NumberSold) as NumberSold, ROUND(SUM(sales.NumberSold) * products.SellPrice, 2) as SaleRevenue, ROUND(SUM(sales.NumberSold) * products.SellPrice - RestockPrice * CurrentInventory, 2) as TotalProfit from sales inner join Products on Products.productID = sales.ProductID GROUP BY ProductName", connection);
+            DataTable dt = new DataTable();
+            connection.Open();
+            MySqlDataReader sdr = cmd.ExecuteReader();
+            dt.Load(sdr);
+            connection.Close();
+            ProductsGrid.ItemsSource = dt.DefaultView;
+        }
+    }
 }

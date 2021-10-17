@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PHPReSP"
         mc:Ignorable="d"
                Title="Edit Sales Record" Height="229" Width="289">
-    <Grid>
+    <Grid Background="#FFFFFFDF">
         <TextBlock HorizontalAlignment="Left" Margin="97,15,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-au" Text="Edit a Sale"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="20,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-au" Text="Sale ID to Edit"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="20,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-au" Text="New "/><Run Text="Product ID"/></TextBlock>

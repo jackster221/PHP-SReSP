@@ -1,0 +1,64 @@
+﻿<Window x:Class="PHPReSP.GenerateReport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:DVC="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=DotNetProjects.DataVisualization.Toolkit"
+        xmlns:local="clr-namespace:PHPReSP"
+        mc:Ignorable="d"
+        Title="GenerateReport" Height="462" Width="800">
+    <Grid Background="#FFE2BBB2">
+        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="170" Margin="25,53,0,0" VerticalAlignment="Top" Width="309" Background="#FFEEF1A4">
+            <DVC:Chart Canvas.Top="80" Canvas.Left="10" Name="mcChart" Margin="0,0,0,0">
+                <DVC:Chart.Series>
+                    <DVC:BarSeries Title="Total Revenue($)"    
+                IndependentValueBinding="{Binding Path=Key}"
+                DependentValueBinding="{Binding Path=Value}" Margin="0,0,0,0"/>
+                </DVC:Chart.Series>
+            </DVC:Chart>
+
+        </Border>
+        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="170" Margin="28,253,0,0" VerticalAlignment="Top" Width="306" Background="#FFEEF1A4" >
+            <DVC:Chart Canvas.Top="80" Canvas.Left="10" Name="mcaChart">
+                <DVC:Chart.Series>
+                    <DVC:LineSeries Title="Total Revenue($)"    
+                IndependentValueBinding="{Binding Path=Key}"
+                DependentValueBinding="{Binding Path=Value}">
+                    </DVC:LineSeries>
+                </DVC:Chart.Series>
+            </DVC:Chart>
+
+        </Border>
+        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="222" Margin="367,52,0,0" VerticalAlignment="Top" Width="386">
+            <Grid Background="#FFF1D8B4">
+                <DataGrid Name="dtg" HorizontalAlignment="Left" Height="156" Margin="16,53,0,0" VerticalAlignment="Top" Width="208"/>
+                <ComboBox Name="Period" HorizontalAlignment="Left" Margin="-77,-40,0,0" VerticalAlignment="Top" Width="92" Height="22" DropDownClosed="Predict_Sales">
+                    <ComboBoxItem IsSelected="True">Month</ComboBoxItem>
+                    <ComboBoxItem>Week</ComboBoxItem>
+                </ComboBox>
+
+                <ComboBox Name="Type" HorizontalAlignment="Left" Margin="254,110,0,0" VerticalAlignment="Top" Width="91" Height="22" DropDownClosed="Predict_Sales">
+                    <ComboBoxItem IsSelected="True">Category</ComboBoxItem>
+                    <ComboBoxItem>Product</ComboBoxItem>
+                </ComboBox>
+                <Label Content="Time Period" HorizontalAlignment="Left" Margin="-165,-42,0,0" VerticalAlignment="Top" Height="26"/>
+                <Label Content="Data Type" HorizontalAlignment="Left" Margin="268,71,0,0" VerticalAlignment="Top" Height="26"/>
+            </Grid>
+        </Border>
+        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="121" Margin="367,302,0,0" VerticalAlignment="Top" Width="386" Background="#FFE27E7E"/>
+        <Label Content="PHP Report" HorizontalAlignment="Left" Height="37" Margin="25,10,0,0" VerticalAlignment="Top" Width="113" FontSize="20" FontFamily="Times New Roman"/>
+        <Button Content="Return Home" HorizontalAlignment="Left" Height="19" Margin="676,19,0,0" VerticalAlignment="Top" Width="77" Click="Close"/>
+        <Label Content="Current Sales (Bar Chart)" HorizontalAlignment="Left" Height="35" Margin="46,263,0,0" VerticalAlignment="Top" Width="185" HorizontalContentAlignment="Center" FontFamily="Garamond" FontSize="16"/>
+        <Label Content="Current Sales (Line Chart)" HorizontalAlignment="Left" Height="35" Margin="46,58,0,0" VerticalAlignment="Top" Width="185" HorizontalContentAlignment="Center" FontFamily="Garamond" FontSize="16"/>
+        <Label Content="Predicted Rate of Sales" HorizontalAlignment="Left" Height="35" Margin="400,58,0,0" VerticalAlignment="Top" Width="185" HorizontalContentAlignment="Center" FontFamily="Garamond" FontSize="18"/>
+        <Button Content="View" HorizontalAlignment="Left" Height="19" Margin="246,66,0,0" VerticalAlignment="Top" Width="77" Click="ViewLineChart"/>
+        <Button Content="View" HorizontalAlignment="Left" Height="19" Margin="246,271,0,0" VerticalAlignment="Top" Width="77" Click="ViewBarChart"/>
+        <Button Content="View" HorizontalAlignment="Left" Height="19" Margin="664,66,0,0" VerticalAlignment="Top" Width="77" Click="ViewPredictionCharts"/>
+        <Label Content="Inventory Upkeep" HorizontalAlignment="Left" Height="35" Margin="468,302,0,0" VerticalAlignment="Top" Width="184" HorizontalContentAlignment="Center" FontFamily="Garamond" FontSize="18"/>
+        <Button Content="View" HorizontalAlignment="Left" Height="19" Margin="664,311,0,0" VerticalAlignment="Top" Width="77" Click="ViewProducts"/>
+
+
+
+
+    </Grid>
+</Window>
