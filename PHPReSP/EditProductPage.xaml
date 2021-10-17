@@ -6,11 +6,9 @@
         xmlns:local="clr-namespace:PHPReSP"
         mc:Ignorable="d"
         Title="EditProductPage" Height="200" Width="800">
-<<<<<<<< HEAD:PHPReSP/EditProductPage.xaml
+
     <Grid Background="#FFFFFFDF">
-========
-    <Grid>
->>>>>>>> Jake:Jakes Work/PHPReSP/EditProductPage.xaml
+
         <Button Content="Update Product" HorizontalAlignment="Left" Margin="654,121,0,0" VerticalAlignment="Top" Click="UpdateProduct"/>
         <TextBox x:Name="ProductName" HorizontalAlignment="Left" Margin="61,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="ProductCategory" HorizontalAlignment="Left" Margin="199,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>

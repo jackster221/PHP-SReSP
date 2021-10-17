@@ -87,7 +87,7 @@ namespace PHPReSP
         {
             myRefresh.RefreshDataGrid(ProductsGrid, "Products");
         }
-<<<<<<<< HEAD:PHPReSP/ProductRecordPage.xaml.cs
+
 
             private void OrderingCosts(object sender, RoutedEventArgs e)
             {
@@ -101,7 +101,6 @@ namespace PHPReSP
             page.Show();
             this.Close();
         }
-========
->>>>>>>> Jake:Jakes Work/PHPReSP/ProductRecordPage.xaml.cs
+
     }
 }
