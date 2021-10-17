@@ -18,34 +18,39 @@ using System.Windows.Shapes;
 
 namespace PHPReSP
 {
-    public partial class AddProductsPage : Window
-    {
-        public AddProductsPage()
-        {
-            InitializeComponent();
-        }
-
-        private void AddNewProduct(object sender, RoutedEventArgs e)
-        {
-            MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=password;database=phpsreps_db");
-
-            try
+      public partial class AddProductsPage : Window
+      {
+            public AddProductsPage()
             {
-                MySqlCommand cmd = new MySqlCommand("Insert Into Products (ProductName,Category,RestockPrice,SellPrice,CurrentInventory) values " +
-                    "(\"" + ProductNameBox.Text + "\",\"" + ProductCategoryBox.Text +
-                    "\"," + RestockPriceBox.Text + "," + SellPriceBox.Text + "," +
-                    AmountInStockBox.Text + ");", connection);
-                connection.Open();
-                cmd.ExecuteNonQuery();
-                connection.Close();
+                  InitializeComponent();
+            }
+
+            private void AddNewProduct(object sender, RoutedEventArgs e)
+            {
+                  MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=password;database=phpsreps_db");
+
+                  try
+                  {
+                        MySqlCommand cmd = new MySqlCommand("Insert Into Products (ProductName,Category,RestockPrice,SellPrice,CurrentInventory, RestockLevel) values " +
+                            "(\"" + ProductNameBox.Text + "\",\"" + ProductCategoryBox.Text +
+                            "\"," + RestockPriceBox.Text + "," + SellPriceBox.Text + "," +
+                            AmountInStockBox.Text + "," + 10 + ");", connection);
+                        MySqlCommand cmd1 = new MySqlCommand("select ProductID, " + AmountInStockBox.Text + " as Amount, ROUND(RestockPrice * " + AmountInStockBox.Text + ", 1) as OrderCost from Products where ProductID = last_insert_id()", connection);
+                        DataTable dt = new DataTable();
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                        MySqlDataReader sdr = cmd1.ExecuteReader();
+                        dt.Load(sdr);
+                        OrderCostGrid.ItemsSource = dt.DefaultView;
+                        connection.Close();
+
+                  }
+                  catch (MySqlException ex)
+                  {
+                        MessageBox.Show(ex.ToString());
+                  }
+                  //Hide();
 
             }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            Hide();
-
-        }
-    }
+      }
 }
