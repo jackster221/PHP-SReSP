@@ -152,7 +152,19 @@ namespace PHPReSP
                   ProductRecordPage page = new ProductRecordPage();
                   page.ShowDialog();
             }
-      }
+
+        private void SearchSalesRecords(object sender, RoutedEventArgs e)
+        {
+            SearchSalesRecordsPage page = new SearchSalesRecordsPage();
+            page.ShowDialog();
+        }
+
+        private void ViewSalesReports(object sender, RoutedEventArgs e)
+        {
+            SalesReports page = new SalesReports();
+            page.ShowDialog();
+        }
+    }
 
 }
 

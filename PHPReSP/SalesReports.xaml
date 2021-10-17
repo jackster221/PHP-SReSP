@@ -1,0 +1,22 @@
+﻿<Window x:Class="PHPReSP.SalesReports"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PHPReSP"
+        mc:Ignorable="d"
+        Title="View Sales Reports" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="161*"/>
+            <ColumnDefinition Width="135*"/>
+            <ColumnDefinition Width="96*"/>
+            <ColumnDefinition Width="409*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="View Full Report" HorizontalAlignment="Left" Margin="28,23,0,0" VerticalAlignment="Top" Width="124" Click="FullReport" />
+        <Button Content="Sales of This Month" HorizontalAlignment="Left" Margin="39,23,0,0" VerticalAlignment="Top" Width="124" Click="ThisMonth" RenderTransformOrigin="0.506,-0.863" Grid.ColumnSpan="2" Grid.Column="1" />
+        <Button Content="Sales of Last Month" HorizontalAlignment="Left" Margin="69,23,0,0" VerticalAlignment="Top" Width="124" Click="LastMonth" RenderTransformOrigin="0.506,-0.863" Grid.ColumnSpan="2" Grid.Column="2" />
+        <Button Content="Sales of Last Week" HorizontalAlignment="Left" Margin="155,23,0,0" VerticalAlignment="Top" Width="124" Click="LastWeek" RenderTransformOrigin="0.506,-0.863" Grid.Column="3" />
+        <DataGrid x:Name="SalesReport" Margin="10,67,10,32" SelectionChanged="DataGrid_SelectionChanged" Grid.ColumnSpan="4"/>
+    </Grid>
+</Window>

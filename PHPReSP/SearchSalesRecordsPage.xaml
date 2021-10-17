@@ -1,0 +1,19 @@
+﻿<Window x:Class="PHPReSP.SearchSalesRecordsPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PHPReSP"
+        mc:Ignorable="d"
+        Title="Search Sales Records" Height="450" Width="800">
+    <Grid>
+        <Label Name="Label2" Content="Enter ProductID: " HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top"></Label>
+        <Label Name="Label3" Content="Enter Sale Date: " HorizontalAlignment="Left" Margin="13,54,0,0" VerticalAlignment="Top"></Label>
+        <TextBox x:Name="EnterData" HorizontalAlignment="Left" Margin="115,25,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="108"/>
+        <TextBox x:Name="EnterDate" HorizontalAlignment="Left" Margin="115,58,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="108"/>
+        <Button x:Name="SearchButton" Content="Search" HorizontalAlignment="Left" Margin="244,23,0,0" VerticalAlignment="Top" Width="100" Click="SearchRecordsByPID"/>
+        <Button x:Name="SearchButton2" Content="Search" HorizontalAlignment="Left" Margin="244,58,0,0" VerticalAlignment="Top" Width="100" Click="SearchRecordsByDate"/>
+        <DataGrid x:Name="SearchResults" Margin="81,110,57,36" SelectionChanged="DataGrid_SelectionChanged"/>
+
+    </Grid>
+</Window>
