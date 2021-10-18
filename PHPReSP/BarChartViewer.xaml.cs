@@ -51,9 +51,9 @@ namespace PHPReSP
                     chartData[i] = new KeyValuePair<string, double>(revenues.items[i], revenues.revenues[i]);
                 }
 
-                ((ColumnSeries)mcChart.Series[0]).ItemsSource = chartData;
+               ((ColumnSeries)mcChart.Series[0]).ItemsSource = chartData;
             }
-            else
+            else if (index == 1)
             {
                 var revenues = new MonthsRevenue();
                 var chartData = new KeyValuePair<string, double>[revenues.months.Count()];
@@ -64,6 +64,20 @@ namespace PHPReSP
                     chartData[i] = new KeyValuePair<string, double>(revenues.months[i], revenues.revenues[i]);
                 }
                 ((ColumnSeries)mcChart.Series[0]).ItemsSource = chartData;
+            }
+            else if(index == 2)
+            {
+
+                var revenues = new WeeksRevenue();
+                var chartData = new KeyValuePair<string, double>[revenues.weeks.Count()];
+
+
+                for (int i = 0; i <= revenues.weeks.Count() - 1; i++)
+                {
+                    chartData[i] = new KeyValuePair<string, double>(revenues.weeks[i], revenues.revenues[i]);
+                }
+                ((ColumnSeries)mcChart.Series[0]).ItemsSource = chartData;
+               
             }
 
         }

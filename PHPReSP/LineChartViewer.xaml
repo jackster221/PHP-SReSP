@@ -20,6 +20,10 @@
                 </DVC:LineSeries>
             </DVC:Chart.Series>
         </DVC:Chart>
+        <ComboBox Name="cmbx_monthweek" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cmbx_monthweek_SelectionChanged">
+            <ComboBoxItem Content="Revenue By Month"/>
+            <ComboBoxItem Content="Revenue By Week"/>
+        </ComboBox>
 
     </Grid>
 </Window>

@@ -32,7 +32,7 @@
         <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="222" Margin="367,52,0,0" VerticalAlignment="Top" Width="386">
             <Grid Background="#FFF1D8B4">
                 <DataGrid Name="dtg" HorizontalAlignment="Left" Height="156" Margin="16,53,0,0" VerticalAlignment="Top" Width="208"/>
-                <ComboBox Name="Period" HorizontalAlignment="Left" Margin="-77,-40,0,0" VerticalAlignment="Top" Width="92" Height="22" DropDownClosed="Predict_Sales">
+                <ComboBox Name="Period" HorizontalAlignment="Left" Margin="-77,-40,0,0" VerticalAlignment="Top" Width="92" Height="22" DropDownClosed="Predict_Sales" SelectionChanged="Period_SelectionChanged">
                     <ComboBoxItem IsSelected="True">Month</ComboBoxItem>
                     <ComboBoxItem>Week</ComboBoxItem>
                 </ComboBox>
@@ -51,8 +51,8 @@
         <Label Content="Current Sales (Bar Chart)" HorizontalAlignment="Left" Height="35" Margin="46,263,0,0" VerticalAlignment="Top" Width="185" HorizontalContentAlignment="Center" FontFamily="Garamond" FontSize="16"/>
         <Label Content="Current Sales (Line Chart)" HorizontalAlignment="Left" Height="35" Margin="46,58,0,0" VerticalAlignment="Top" Width="185" HorizontalContentAlignment="Center" FontFamily="Garamond" FontSize="16"/>
         <Label Content="Predicted Rate of Sales" HorizontalAlignment="Left" Height="35" Margin="400,58,0,0" VerticalAlignment="Top" Width="185" HorizontalContentAlignment="Center" FontFamily="Garamond" FontSize="18"/>
-        <Button Content="View" HorizontalAlignment="Left" Height="19" Margin="246,66,0,0" VerticalAlignment="Top" Width="77" Click="ViewLineChart"/>
-        <Button Content="View" HorizontalAlignment="Left" Height="19" Margin="246,271,0,0" VerticalAlignment="Top" Width="77" Click="ViewBarChart"/>
+        <Button Content="View" HorizontalAlignment="Left" Height="19" Margin="246,271,0,0" VerticalAlignment="Top" Width="77" Click="ViewLineChart"/>
+        <Button Content="View" HorizontalAlignment="Left" Height="19" Margin="246,66,0,0" VerticalAlignment="Top" Width="77" Click="ViewBarChart"/>
         <Button Content="View" HorizontalAlignment="Left" Height="19" Margin="664,66,0,0" VerticalAlignment="Top" Width="77" Click="ViewPredictionCharts"/>
         <Label Content="Inventory Upkeep" HorizontalAlignment="Left" Height="35" Margin="468,302,0,0" VerticalAlignment="Top" Width="184" HorizontalContentAlignment="Center" FontFamily="Garamond" FontSize="18"/>
         <Button Content="View" HorizontalAlignment="Left" Height="19" Margin="664,311,0,0" VerticalAlignment="Top" Width="77" Click="ViewProducts"/>

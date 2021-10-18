@@ -32,8 +32,8 @@ namespace PHPReSP
         {
             InitializeComponent();
             Predict_Sales();
-            BarChartData(0);
-            LineChartData(0);
+            BarChartData(Period.SelectedIndex);
+            LineChartData(Period.SelectedIndex);
         }
 
         //View all from these viewer buttons
@@ -65,15 +65,32 @@ namespace PHPReSP
         {
             manager.ConvertDBtoSalesObj();
 
-            var revenues = new MonthsRevenue();
-            var chartData = new KeyValuePair<string, double>[revenues.months.Count()];
-
-
-            for (int i = 0; i <= revenues.months.Count() - 1; i++)
+            if(index == 0)
             {
-                chartData[i] = new KeyValuePair<string, double>(revenues.months[i], revenues.revenues[i]);
-            }
+                var revenues = new MonthsRevenue();
+                var chartData = new KeyValuePair<string, double>[revenues.months.Count()];
+
+
+                for (int i = 0; i <= revenues.months.Count() - 1; i++)
+                {
+                    chartData[i] = new KeyValuePair<string, double>(revenues.months[i], revenues.revenues[i]);
+                }
                ((LineSeries)LChart.Series[0]).ItemsSource = chartData;
+            }
+            else if(index == 1)
+            {
+                var revenues = new WeeksRevenue();
+                var chartData = new KeyValuePair<string, double>[revenues.weeks.Count()];
+
+
+                for (int i = 0; i <= revenues.weeks.Count() - 1; i++)
+                {
+                    chartData[i] = new KeyValuePair<string, double>(revenues.weeks[i], revenues.revenues[i]);
+                }
+               ((LineSeries)LChart.Series[0]).ItemsSource = chartData;
+            }
+
+           
 
         }
 
@@ -93,6 +110,20 @@ namespace PHPReSP
                 }
 
                 ((ColumnSeries)BChart.Series[0]).ItemsSource = chartData;
+            }
+            else if(index == 1)
+            {
+                var revenues = new WeeksRevenue();
+                var chartData = new KeyValuePair<string, double>[revenues.weeks.Count()];
+
+
+                for (int i = 0; i <= revenues.weeks.Count() - 1; i++)
+                {
+                    chartData[i] = new KeyValuePair<string, double>(revenues.weeks[i], revenues.revenues[i]);
+                }
+                ((ColumnSeries)BChart.Series[0]).ItemsSource = chartData;
+
+               
             }
             else
             {
@@ -192,6 +223,12 @@ namespace PHPReSP
             HomeInterface page = new HomeInterface();
             page.Show();
             this.Close();
+        }
+
+        private void Period_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            BarChartData(Period.SelectedIndex);
+            LineChartData(Period.SelectedIndex);
         }
     }
 }

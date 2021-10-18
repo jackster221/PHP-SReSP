@@ -26,28 +26,46 @@ namespace PHPReSP
         public LineChartViewer()
         {
             InitializeComponent();
+            cmbx_monthweek.SelectedIndex = 0;
 
-            LineChartData(0);
+            LineChartData(cmbx_monthweek.SelectedIndex);
         }
 
 
 
         public void LineChartData(int index)
         {
-            manager.ConvertDBtoSalesObj();
-
-            var revenues = new MonthsRevenue();
-            var chartData = new KeyValuePair<string, double>[revenues.months.Count()];
-
-
-            for (int i = 0; i <= revenues.months.Count() - 1; i++)
+            if (index == 0)
             {
-                chartData[i] = new KeyValuePair<string, double>(revenues.months[i], revenues.revenues[i]);
-            }
+                var revenues = new MonthsRevenue();
+                var chartData = new KeyValuePair<string, double>[revenues.months.Count()];
+
+
+                for (int i = 0; i <= revenues.months.Count() - 1; i++)
+                {
+                    chartData[i] = new KeyValuePair<string, double>(revenues.months[i], revenues.revenues[i]);
+                }
                 ((LineSeries)mcChart.Series[0]).ItemsSource = chartData;
+            }
+            else if (index == 1)
+            {
+                var revenues = new WeeksRevenue();
+                var chartData = new KeyValuePair<string, double>[revenues.weeks.Count()];
+
+
+                for (int i = 0; i <= revenues.weeks.Count() - 1; i++)
+                {
+                    chartData[i] = new KeyValuePair<string, double>(revenues.weeks[i], revenues.revenues[i]);
+                }
+               ((LineSeries)mcChart.Series[0]).ItemsSource = chartData;
+            }
 
         }
 
+        private void cmbx_monthweek_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            LineChartData(cmbx_monthweek.SelectedIndex);
+        }
     }
 }
 
