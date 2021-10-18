@@ -45,7 +45,9 @@
                 <Label Content="Data Type" HorizontalAlignment="Left" Margin="268,71,0,0" VerticalAlignment="Top" Height="26"/>
             </Grid>
         </Border>
-        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="121" Margin="367,302,0,0" VerticalAlignment="Top" Width="386" Background="#FFE27E7E"/>
+        <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="121" Margin="367,302,0,0" VerticalAlignment="Top" Width="386" Background="#FFE27E7E">
+            <DataGrid x:Name="InvGrid" HorizontalAlignment="Center" Height="77" VerticalAlignment="Top" Width="366" RenderTransformOrigin="0.494,0.51" Margin="0,33,0,0"/>
+        </Border>
         <Label Content="PHP Report" HorizontalAlignment="Left" Height="37" Margin="25,10,0,0" VerticalAlignment="Top" Width="113" FontSize="20" FontFamily="Times New Roman"/>
         <Button Content="Return Home" HorizontalAlignment="Left" Height="19" Margin="676,19,0,0" VerticalAlignment="Top" Width="77" Click="Close"/>
         <Label Content="Current Sales (Bar Chart)" HorizontalAlignment="Left" Height="35" Margin="46,263,0,0" VerticalAlignment="Top" Width="185" HorizontalContentAlignment="Center" FontFamily="Garamond" FontSize="16"/>

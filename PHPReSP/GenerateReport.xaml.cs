@@ -34,6 +34,32 @@ namespace PHPReSP
             Predict_Sales();
             BarChartData(Period.SelectedIndex);
             LineChartData(Period.SelectedIndex);
+            RestockWarning();
+        }
+
+        private void RestockWarning()
+        {
+            string restockquery =
+                "SELECT Products.productName AS Product, " +
+                "CurrentInventory AS Stock_Level, " + "RestockLevel AS Restock_Level, " +
+                "IF (SUM(Products.CurrentInventory) < SUM(Products.RestockLevel), \"RESTOCK REQUIRED\", \"\") AS Restock FROM Products " +
+                "WHERE ((Products.CurrentInventory) < (Products.RestockLevel)) " + "GROUP BY ProductName; ";
+
+            MySqlConnection connection = new MySqlConnection("server=localhost;uid=root;pwd=password;database=phpsreps_db");
+            MySqlCommand cmd = new MySqlCommand(restockquery, connection);
+
+            DataTable dti = new DataTable();
+            connection.Open();
+            MySqlDataReader sdr = cmd.ExecuteReader();
+            dti.Load(sdr);
+            connection.Close();
+            InvGrid.ItemsSource = dti.DefaultView;
+
+        }
+
+        private void RestockWarning(object sender, EventArgs e)
+        {
+            RestockWarning();
         }
 
         //View all from these viewer buttons
