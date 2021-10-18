@@ -78,7 +78,7 @@ namespace PHPReSP
 
         private void ViewSalesProfit(object sender, RoutedEventArgs e)
         {
-            TotalProfitRevenue page = new TotalProfitRevenue();
+            SalesProfitPage page = new SalesProfitPage();
             page.Show();
         }
 

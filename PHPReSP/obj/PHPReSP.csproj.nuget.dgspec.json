@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jack_\\OneDrive\\Documents\\GitHub\\PHP-SReSP\\PHPReSP\\PHPReSP.csproj": {}
+    "C:\\Users\\draga\\Source\\Repos\\PHP-SReSP5\\PHPReSP\\PHPReSP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jack_\\OneDrive\\Documents\\GitHub\\PHP-SReSP\\PHPReSP\\PHPReSP.csproj": {
+    "C:\\Users\\draga\\Source\\Repos\\PHP-SReSP5\\PHPReSP\\PHPReSP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jack_\\OneDrive\\Documents\\GitHub\\PHP-SReSP\\PHPReSP\\PHPReSP.csproj",
+        "projectUniqueName": "C:\\Users\\draga\\Source\\Repos\\PHP-SReSP5\\PHPReSP\\PHPReSP.csproj",
         "projectName": "PHPReSP",
-        "projectPath": "C:\\Users\\Jack_\\OneDrive\\Documents\\GitHub\\PHP-SReSP\\PHPReSP\\PHPReSP.csproj",
-        "packagesPath": "C:\\Users\\Jack_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jack_\\OneDrive\\Documents\\GitHub\\PHP-SReSP\\PHPReSP\\obj\\",
+        "projectPath": "C:\\Users\\draga\\Source\\Repos\\PHP-SReSP5\\PHPReSP\\PHPReSP.csproj",
+        "packagesPath": "C:\\Users\\draga\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\draga\\Source\\Repos\\PHP-SReSP5\\PHPReSP\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Jack_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\draga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -81,7 +85,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
