@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PHPReSP"
         mc:Ignorable="d"
-        Title="DisplayProducts" Height="450" Width="800">
+        Title="DisplayProducts" Height="462" Width="800">
     <Grid Background="#FFFFFFDF">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*"/>
@@ -16,17 +16,21 @@
         </Grid.RowDefinitions>
         <Button Content="Add New Product" HorizontalAlignment="Left" Margin="62,384,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="AddNewProduct" Width="100" Grid.Column="1" Height="20"/>
         <Button Content="Edit Product ID:" HorizontalAlignment="Left" Margin="195,384,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="EditProduct" Width="100" Grid.Column="1" Height="20"/>
-        <DataGrid x:Name="ProductsGrid" Grid.ColumnSpan="2" Margin="62,25,145,86"/>
+        <DataGrid x:Name="ProductsGrid" Grid.ColumnSpan="2" Margin="62,25,145,108"/>
         <TextBox x:Name="EditProductID" HorizontalAlignment="Left" Margin="301,384,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" Grid.ColumnSpan="2" Height="20"/>
-        <Button Content="Update Inventory Stock" HorizontalAlignment="Left" Margin="431,384,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="UpdateInventory" Width="137" Grid.Column="1" Height="20"/>
-        <TextBox x:Name="EditInventoryID" HorizontalAlignment="Left" Margin="582,384,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" Grid.ColumnSpan="2" Height="20"/>
-        <TextBox x:Name="EditInventoryAmount" HorizontalAlignment="Left" Margin="671,384,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" Grid.ColumnSpan="2" Height="20"/>
-        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="581,363,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-au" Text="Product ID"/></TextBlock>
+        <Button Content="Update Inventory Stock" HorizontalAlignment="Left" Margin="439,364,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="UpdateInventory" Width="137" Grid.Column="1" Height="20"/>
+        <TextBox x:Name="EditInventoryID" HorizontalAlignment="Left" Margin="590,364,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" Grid.ColumnSpan="2" Height="20"/>
+        <TextBox x:Name="EditInventoryAmount" HorizontalAlignment="Left" Margin="679,364,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" Grid.ColumnSpan="2" Height="20"/>
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="589,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-au" Text="Product ID"/></TextBlock>
         <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="300,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-au" Text="Product ID"/></TextBlock>
-        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="652,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-au" Text="Current Inventory"/></TextBlock>
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="660,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-au" Text="Current Inventory"/></TextBlock>
         <Button x:Name="Refresh" Content="Refresh" HorizontalAlignment="Left" Margin="671,171,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="RefreshGrid" Width="100" Height="21" Grid.ColumnSpan="2"/>
         <Button Content="Ordering Costs" HorizontalAlignment="Left" Margin="671,202,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="OrderingCosts" Width="100" Grid.Column="1" Height="20"/>
         <Button Content="Return Home" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="671,25,0,0" VerticalAlignment="Top" Height="22" Width="100" Click="Close"/>
-
+        <Button Content="Set Restock Level" HorizontalAlignment="Left" Margin="440,405,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.647,0.549" Click="SetRestockLevel" Width="137" Grid.Column="1" Height="20"/>
+        <TextBox x:Name="RestockProductID" HorizontalAlignment="Left" Margin="591,405,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" Grid.ColumnSpan="2" Height="20"/>
+        <TextBox x:Name="RestockLevel" HorizontalAlignment="Left" Margin="680,405,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="54" Grid.ColumnSpan="2" Height="20"/>
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="589,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-au" Text="Product ID"/></TextBlock>
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="671,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-au" Text="Restock Level"/></TextBlock>
     </Grid>
 </Window>

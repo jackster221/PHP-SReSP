@@ -41,7 +41,7 @@ namespace PHPReSP
                 MySqlCommand cmd = new MySqlCommand("Insert Into Sales (ProductID,NumberSold,SaleDate) values " +
                     "(" + ProductIDBox.Text + "," + NumberSoldBox.Text + ", \"" + Convert.ToDateTime(SaleDateBox.Text).ToString("yyyy-MM-dd") + "\");" +
                     "" +
-                    "Update products set CurrentInventory = CurrentInventory - " + NumberSoldBox.Text + 
+                    "Update products set CurrentInventory = CurrentInventory - " + NumberSoldBox.Text +
                     " where ProductID = " + ProductIDBox.Text + ";", connection);
                 connection.Open();
                 cmd.ExecuteNonQuery();
