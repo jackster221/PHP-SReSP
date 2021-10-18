@@ -27,12 +27,12 @@ namespace PHPReSP
         {
             InitializeComponent();
 
-            ChartData(0);
+            LineChartData(0);
         }
 
 
 
-        public void ChartData(int index)
+        public void LineChartData(int index)
         {
             manager.ConvertDBtoSalesObj();
 

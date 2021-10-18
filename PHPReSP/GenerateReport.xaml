@@ -9,9 +9,9 @@
         Title="GenerateReport" Height="462" Width="800">
     <Grid Background="#FFE2BBB2">
         <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="170" Margin="25,53,0,0" VerticalAlignment="Top" Width="309" Background="#FFEEF1A4">
-            <DVC:Chart Canvas.Top="80" Canvas.Left="10" Name="mcChart" Margin="0,0,0,0">
+            <DVC:Chart Canvas.Top="80" Canvas.Left="10" Name="BChart" Margin="0,0,0,0">
                 <DVC:Chart.Series>
-                    <DVC:BarSeries Title="Total Revenue($)"    
+                    <DVC:ColumnSeries Title="Total Revenue($)"    
                 IndependentValueBinding="{Binding Path=Key}"
                 DependentValueBinding="{Binding Path=Value}" Margin="0,0,0,0"/>
                 </DVC:Chart.Series>
@@ -19,7 +19,7 @@
 
         </Border>
         <Border BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Left" Height="170" Margin="28,253,0,0" VerticalAlignment="Top" Width="306" Background="#FFEEF1A4" >
-            <DVC:Chart Canvas.Top="80" Canvas.Left="10" Name="mcaChart">
+            <DVC:Chart Canvas.Top="80" Canvas.Left="10" Name="LChart">
                 <DVC:Chart.Series>
                     <DVC:LineSeries Title="Total Revenue($)"    
                 IndependentValueBinding="{Binding Path=Key}"

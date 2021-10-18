@@ -25,10 +25,15 @@ namespace PHPReSP
 
     public partial class GenerateReport : Window
     {
+
+        private DataManager manager = new DataManager();
+
         public GenerateReport()
         {
             InitializeComponent();
             Predict_Sales();
+            BarChartData(0);
+            LineChartData(0);
         }
 
         //View all from these viewer buttons
@@ -56,7 +61,53 @@ namespace PHPReSP
             page.ShowDialog();
         }
 
+        public void LineChartData(int index)
+        {
+            manager.ConvertDBtoSalesObj();
 
+            var revenues = new MonthsRevenue();
+            var chartData = new KeyValuePair<string, double>[revenues.months.Count()];
+
+
+            for (int i = 0; i <= revenues.months.Count() - 1; i++)
+            {
+                chartData[i] = new KeyValuePair<string, double>(revenues.months[i], revenues.revenues[i]);
+            }
+               ((LineSeries)LChart.Series[0]).ItemsSource = chartData;
+
+        }
+
+        public void BarChartData(int index)
+        {
+            manager.ConvertDBtoSalesObj();
+
+            if (index == 0)
+            {
+                var revenues = new ItemsRevenue();
+                var chartData = new KeyValuePair<string, double>[revenues.items.Count()];
+
+
+                for (int i = 0; i <= revenues.items.Count() - 1; i++)
+                {
+                    chartData[i] = new KeyValuePair<string, double>(revenues.items[i], revenues.revenues[i]);
+                }
+
+                ((ColumnSeries)BChart.Series[0]).ItemsSource = chartData;
+            }
+            else
+            {
+                var revenues = new MonthsRevenue();
+                var chartData = new KeyValuePair<string, double>[revenues.months.Count()];
+
+
+                for (int i = 0; i <= revenues.months.Count() - 1; i++)
+                {
+                    chartData[i] = new KeyValuePair<string, double>(revenues.months[i], revenues.revenues[i]);
+                }
+                ((ColumnSeries)BChart.Series[0]).ItemsSource = chartData;
+            }
+
+        }
 
         //Code for Prediction on Sales
         private void Predict_Sales()

@@ -101,7 +101,6 @@ C:\Users\Jack_\OneDrive\Documents\GitHub\PHP-SReSP\PHPReSP\obj\Debug\net5.0-wind
 C:\Users\Jack_\OneDrive\Documents\GitHub\PHP-SReSP\PHPReSP\obj\Debug\net5.0-windows\GenerateReport.g.cs
 C:\Users\Jack_\OneDrive\Documents\GitHub\PHP-SReSP\PHPReSP\obj\Debug\net5.0-windows\HomeInterface.g.cs
 C:\Users\Jack_\OneDrive\Documents\GitHub\PHP-SReSP\PHPReSP\obj\Debug\net5.0-windows\LineChartViewer.g.cs
-C:\Users\Jack_\OneDrive\Documents\GitHub\PHP-SReSP\PHPReSP\obj\Debug\net5.0-windows\MainWindow.g.cs
 C:\Users\Jack_\OneDrive\Documents\GitHub\PHP-SReSP\PHPReSP\obj\Debug\net5.0-windows\PredictionPage.g.cs
 C:\Users\Jack_\OneDrive\Documents\GitHub\PHP-SReSP\PHPReSP\obj\Debug\net5.0-windows\ProductOrderingCosts.g.cs
 C:\Users\Jack_\OneDrive\Documents\GitHub\PHP-SReSP\PHPReSP\obj\Debug\net5.0-windows\Products.g.cs
@@ -179,7 +178,6 @@ C:\Users\Jack_\OneDrive\Documents\GitHub\PHP-SReSP\PHPReSP\obj\Debug\net5.0-wind
 C:\Users\Jack_\OneDrive\Documents\GitHub\PHP-SReSP\PHPReSP\obj\Debug\net5.0-windows\GenerateReport.baml
 C:\Users\Jack_\OneDrive\Documents\GitHub\PHP-SReSP\PHPReSP\obj\Debug\net5.0-windows\HomeInterface.baml
 C:\Users\Jack_\OneDrive\Documents\GitHub\PHP-SReSP\PHPReSP\obj\Debug\net5.0-windows\LineChartViewer.baml
-C:\Users\Jack_\OneDrive\Documents\GitHub\PHP-SReSP\PHPReSP\obj\Debug\net5.0-windows\MainWindow.baml
 C:\Users\Jack_\OneDrive\Documents\GitHub\PHP-SReSP\PHPReSP\obj\Debug\net5.0-windows\PredictionPage.baml
 C:\Users\Jack_\OneDrive\Documents\GitHub\PHP-SReSP\PHPReSP\obj\Debug\net5.0-windows\ProductOrderingCosts.baml
 C:\Users\Jack_\OneDrive\Documents\GitHub\PHP-SReSP\PHPReSP\obj\Debug\net5.0-windows\ProductRecordPage.baml
